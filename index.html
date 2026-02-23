@@ -11,74 +11,127 @@
   <link rel="stylesheet" href="/css/animations.css">
 </head>
 <body>
+
+  <!-- SVG gradient definitions for decorative strokes -->
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-cv" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#a78bfa"/>
+      </linearGradient>
+      <linearGradient id="g-vp" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#f472b6"/>
+      </linearGradient>
+      <linearGradient id="g-cg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#34d399"/>
+      </linearGradient>
+      <linearGradient id="g-po" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#fb923c"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
   <div class="reveal">
     <div class="slides">
 
       <!-- ========== 1. TITRE ========== -->
       <section class="slide-title" data-transition="fade">
         <div class="slide-content text-center">
-          <h1><span class="gradient-text">Vibe Coding &amp; BMAD</span></h1>
-          <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
-          <p class="text-lg mt-sm">Industrialiser le dev assisté par IA</p>
-          <p class="text-muted mt-md text-sm">Clément Raussin · Qim Info · Cloud &amp; DevOps</p>
+          <div class="deco-corners">
+            <h1 class="text-xxl"><span class="gradient-text">Vibe Coding<br>&amp; BMAD</span></h1>
+            <div class="accent-line accent-line-center"></div>
+            <p class="text-lg text-muted">Industrialiser le dev assisté par IA</p>
+            <div class="tag-row mt-lg">
+              <span class="tag tag-cyan">Clément Raussin</span>
+              <span class="tag tag-violet">Qim Info</span>
+              <span class="tag tag-green">Cloud &amp; DevOps</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ========== 2. LE CHOC ========== -->
-      <section class="slide-shock" data-transition="slide">
+      <section class="slide-shock" data-transition="zoom">
         <div class="slide-content text-center">
-          <h2 class="text-xxl"><span class="gradient-hot">Le vibe coding c'est de la merde.</span></h2>
-          <p class="text-muted text-lg mt-md">Construire sur du sable, c'est pas coder l'avenir.</p>
+          <svg class="deco-poop" viewBox="0 0 160 160" aria-hidden="true">
+            <path d="M55,28 Q58,14 53,0" fill="none" stroke="url(#g-vp)" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.15"/>
+            <path d="M80,20 Q84,5 80,-10" fill="none" stroke="url(#g-vp)" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.12"/>
+            <path d="M105,28 Q102,14 107,0" fill="none" stroke="url(#g-vp)" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.15"/>
+            <path d="M90,48 C90,36 78,32 74,40 C70,48 82,52 88,48 C94,44 98,50 95,58" fill="none" stroke="url(#g-vp)" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.18"/>
+            <path d="M62,72 C50,68 48,56 60,54 L100,56 C114,56 116,68 104,72 Z" fill="none" stroke="url(#g-vp)" stroke-width="1.5" stroke-opacity="0.18"/>
+            <path d="M48,100 C32,96 30,78 46,74 L118,74 C134,78 132,96 116,100 Z" fill="none" stroke="url(#g-vp)" stroke-width="1.5" stroke-opacity="0.18"/>
+            <path d="M36,132 C16,128 12,106 34,102 L130,102 C152,106 148,128 128,132 Z" fill="none" stroke="url(#g-vp)" stroke-width="1.5" stroke-opacity="0.18"/>
+          </svg>
+          <h2 class="text-massive"><span class="gradient-hot">Le vibe coding<br>c'est de la m</span><span class="grawlix">@#✦!</span><span class="gradient-hot">e.</span></h2>
         </div>
       </section>
 
       <!-- ========== 3. QUI SUIS-JE ========== -->
       <section class="slide-whoami" data-transition="slide">
-        <div class="slide-content">
-          <h2>Moi c'est <span class="text-cyan">Clément</span></h2>
-          <div class="accent-line"></div>
-          <p class="mt-md">Dev millennial, <em>années 90</em> — l'âge d'or des vrais devs.</p>
-          <p>Centre d'expertise <strong>Qim Info</strong>, responsable Cloud &amp; DevOps.</p>
-          <p class="text-muted mt-md">Et si on réconciliait l'ingénierie ancestrale avec les pratiques IA d'aujourd'hui ?</p>
+        <div class="layout-split">
+          <div class="split-main">
+            <h2>Moi c'est <span class="text-cyan">Clément</span></h2>
+            <div class="accent-line"></div>
+            <div class="keyword-stack mt-md">
+              <span class="keyword kw-cyan">Dev millennial · Années 90</span>
+              <span class="keyword kw-violet">Centre d'expertise Qim Info</span>
+              <span class="keyword kw-green">Head Of Cloud &amp; DevOps</span>
+            </div>
+            <p class="text-muted text-sm mt-lg">Réconcilier l'ingénierie et l'IA.</p>
+          </div>
+          <div class="split-deco">
+            <svg viewBox="0 0 300 300" class="deco-hex">
+              <polygon points="150,10 280,80 280,220 150,290 20,220 20,80" fill="none" stroke="url(#g-cv)" stroke-width="1.5" opacity="0.3"/>
+              <polygon points="150,40 250,95 250,205 150,260 50,205 50,95" fill="none" stroke="url(#g-cv)" stroke-width="1" opacity="0.15"/>
+              <polygon points="150,70 220,110 220,190 150,230 80,190 80,110" fill="none" stroke="url(#g-cv)" stroke-width="0.5" opacity="0.08"/>
+            </svg>
+          </div>
         </div>
       </section>
 
       <!-- ========== 4. LA RÉALITÉ ========== -->
       <section class="slide-reality" data-transition="slide">
-        <div class="slide-content">
-          <h2>La <span class="gradient-electric">réalité</span></h2>
-          <div class="accent-line"></div>
-          <p class="mt-md">Au début : <em>"C'est pour les business guys, les POC rapides, un truc sur un coin de bureau."</em></p>
-          <p class="mt-sm">Mais maintenant l'IA rentre dans la création des <strong>vrais gros logiciels</strong>.</p>
-          <p class="text-muted mt-sm">Il faut intégrer ça dans les cycles de vie. Il faut <em>industrialiser</em>.</p>
+        <div class="layout-split-arrow">
+          <div class="reality-before">
+            <div class="reality-label text-muted">Avant</div>
+            <p class="text-lg">POC rapides</p>
+            <p class="text-lg">Business guys</p>
+            <p class="text-lg">Coin de bureau</p>
+          </div>
+          <div class="reality-arrow">
+            <svg viewBox="0 0 80 40" class="arrow-svg">
+              <path d="M5,20 L55,20" stroke="url(#g-cg)" stroke-width="2.5" fill="none"/>
+              <polygon points="55,12 75,20 55,28" fill="url(#g-cg)"/>
+            </svg>
+          </div>
+          <div class="reality-after">
+            <div class="reality-label text-cyan">Maintenant</div>
+            <p class="text-lg"><strong>Vrais logiciels</strong></p>
+            <p class="text-lg"><strong>Cycles de vie</strong></p>
+            <p class="text-lg"><em>Industrialisation</em></p>
+          </div>
         </div>
       </section>
 
       <!-- ========== 5. LES 4 FLÉAUX ========== -->
       <section class="slide-plagues" data-transition="slide">
         <div class="slide-content">
-          <h2>Les <span class="text-pink">4 fléaux</span> du vibe coding</h2>
-          <div class="accent-line"></div>
-          <div class="plagues-grid mt-md">
-            <div class="accent-card">
-              <p class="text-lg">🌪️</p>
-              <h3 class="text-md">Context Death Spiral</h3>
-              <p class="text-sm text-muted">Chaque session repart de zéro. 20 min à ré-expliquer le projet.</p>
+          <h2 class="text-center">Les <span class="text-pink">4 fléaux</span></h2>
+          <div class="plagues-grid mt-lg">
+            <div class="plague-card">
+              <div class="plague-icon">🌪️</div>
+              <h3>Context<br>Death Spiral</h3>
             </div>
-            <div class="accent-card">
-              <p class="text-lg">🎭</p>
-              <h3 class="text-md">Consistency Crisis</h3>
-              <p class="text-sm text-muted">3 patterns d'auth différents dans 5 composants.</p>
+            <div class="plague-card">
+              <div class="plague-icon">🎭</div>
+              <h3>Consistency<br>Crisis</h3>
             </div>
-            <div class="accent-card">
-              <p class="text-lg">📚</p>
-              <h3 class="text-md">Documentation Debt</h3>
-              <p class="text-sm text-muted">Tout est conversationnel. Zéro trace des décisions.</p>
+            <div class="plague-card">
+              <div class="plague-icon">📚</div>
+              <h3>Documentation<br>Debt</h3>
             </div>
-            <div class="accent-card">
-              <p class="text-lg">🎲</p>
-              <h3 class="text-md">Quality Roulette</h3>
-              <p class="text-sm text-muted">Parfois brillant, parfois catastrophique. Aucune garantie.</p>
+            <div class="plague-card">
+              <div class="plague-icon">🎲</div>
+              <h3>Quality<br>Roulette</h3>
             </div>
           </div>
         </div>
@@ -86,80 +139,224 @@
 
       <!-- ========== 6. L'ÉCHELLE ========== -->
       <section class="slide-scale" data-transition="slide">
-        <div class="slide-content">
-          <h2>Le problème <span class="gradient-sunset">d'échelle</span></h2>
-          <div class="accent-line"></div>
-          <div class="scale-comparison mt-md">
-            <div class="accent-card">
-              <h3 class="text-green text-md">✓ Solo / Freelance / Startup</h3>
-              <p class="text-sm text-muted">Le vibe coding, ça marche.</p>
-            </div>
-            <div class="accent-card">
-              <h3 class="text-pink text-md">✗ Enterprise / Équipes / Durée</h3>
-              <p class="text-sm text-muted">~60% de cohérence. Contexte perdu. Indéterminisme total.</p>
+        <div class="layout-versus">
+          <div class="versus-side">
+            <div class="versus-icon text-green">✓</div>
+            <h3 class="text-green">Solo</h3>
+            <div class="tag-row mt-sm">
+              <span class="tag tag-muted">Freelance</span>
+              <span class="tag tag-muted">Startup</span>
+              <span class="tag tag-muted">POC</span>
             </div>
           </div>
-          <p class="text-muted mt-md text-center">Passer à l'échelle, c'est une autre histoire.</p>
+          <div class="versus-divider">
+            <svg viewBox="0 0 4 260" class="divider-line">
+              <line x1="2" y1="0" x2="2" y2="260" stroke="url(#g-vp)" stroke-width="2" stroke-dasharray="8,6"/>
+            </svg>
+          </div>
+          <div class="versus-side">
+            <div class="versus-icon text-pink">✗</div>
+            <h3 class="text-pink">Équipe</h3>
+            <div class="tag-row mt-sm">
+              <span class="tag tag-muted">Enterprise</span>
+              <span class="tag tag-muted">Collaboration</span>
+              <span class="tag tag-muted">Scale</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ========== 7. LA QUESTION ========== -->
       <section class="slide-question" data-transition="fade">
         <div class="slide-content text-center">
-          <h2 class="text-xxl"><span class="gradient-text">Et si on structurait le chaos ?</span></h2>
-          <p class="text-muted text-lg mt-md">Faut-il le faire, pourquoi, et comment ?</p>
+          <svg class="deco-line-h" viewBox="0 0 600 2"><line x1="0" y1="1" x2="600" y2="1" stroke="url(#g-cv)" stroke-width="1.5"/></svg>
+          <h2 class="text-xxl mt-md"><span class="gradient-text">Du déterminisme<br>dans l'indéterminisme ?</span></h2>
+          <svg class="deco-line-h mt-md" viewBox="0 0 600 2"><line x1="0" y1="1" x2="600" y2="1" stroke="url(#g-cv)" stroke-width="1.5"/></svg>
         </div>
       </section>
 
       <!-- ========== 8. BMAD ========== -->
       <section class="slide-bmad" data-transition="slide">
-        <div class="slide-content">
-          <h2><span class="gradient-text">BMAD</span></h2>
-          <p class="text-sm text-muted mb-sm">Breakthrough Method for Agile AI Driven Development</p>
-          <div class="accent-line"></div>
-          <div class="bmad-features mt-md">
-            <div class="accent-card">
-              <h3 class="text-cyan text-md">12+ agents spécialisés</h3>
-              <p class="text-sm text-muted">Analyst, PM, Architect, Scrum Master, Dev, QA…</p>
+        <div class="slide-content text-center">
+          <h2 class="text-xxl"><span class="gradient-text">BMAD</span></h2>
+          <p class="text-sm text-muted">Breakthrough Method for Agile AI Driven Development</p>
+          <div class="bmad-pillars mt-lg">
+            <div class="pillar">
+              <span class="pillar-value text-cyan">12+</span>
+              <span class="pillar-label">agents</span>
             </div>
-            <div class="accent-card">
-              <h3 class="text-violet text-md">34+ workflows</h3>
-              <p class="text-sm text-muted">Scale-adaptive : du bugfix au système enterprise</p>
+            <div class="pillar">
+              <span class="pillar-value text-violet">34+</span>
+              <span class="pillar-label">workflows</span>
             </div>
-            <div class="accent-card">
-              <h3 class="text-green text-md">Modes adaptés</h3>
-              <p class="text-sm text-muted">Quick flow · Full method · Game dev · Brainstorming</p>
+            <div class="pillar">
+              <span class="pillar-value text-green">3</span>
+              <span class="pillar-label">tracks</span>
             </div>
           </div>
-          <p class="mt-md text-sm text-muted">37.1k ⭐ GitHub · 117 contributeurs · MIT open source · v6</p>
-          <p class="text-sm"><em>"Expert collaborators who guide your best thinking"</em></p>
+          <div class="tag-row mt-lg">
+            <span class="tag tag-muted">37.1k ⭐</span>
+            <span class="tag tag-muted">MIT</span>
+            <span class="tag tag-muted">v6</span>
+            <span class="tag tag-muted">117 contributors</span>
+          </div>
         </div>
       </section>
 
-      <!-- ========== 9. LES GAINS ========== -->
-      <section class="slide-gains" data-transition="slide">
+      <!-- ========== 9. LES AGENTS ========== -->
+      <section class="slide-agents" data-transition="slide">
         <div class="slide-content">
-          <h2>Les <span class="gradient-electric">vrais gains</span></h2>
-          <div class="accent-line"></div>
-          <div class="gains-grid mt-md">
-            <div class="accent-card text-center">
-              <p class="text-xxl text-cyan">57%</p>
-              <p class="text-sm text-muted">réduction des coûts</p>
+          <h2 class="text-center">Les <span class="gradient-text">agents</span></h2>
+          <div class="agents-grid mt-lg">
+            <div class="agent-card">
+              <div class="agent-icon">🧑‍💼</div>
+              <div class="agent-info">
+                <div class="agent-name">Business Analyst</div>
+                <div class="agent-role">Product brief · Vision · Recherche marché</div>
+              </div>
             </div>
-            <div class="accent-card text-center">
-              <p class="text-xxl text-violet">3x</p>
-              <p class="text-sm text-muted">plus rapide</p>
+            <div class="agent-card">
+              <div class="agent-icon">📋</div>
+              <div class="agent-info">
+                <div class="agent-name">Product Manager</div>
+                <div class="agent-role">PRD · Tech spec · User stories</div>
+              </div>
             </div>
-            <div class="accent-card text-center">
-              <p class="text-xxl text-green">6h</p>
-              <p class="text-sm text-muted">de planning vs 3 semaines</p>
+            <div class="agent-card">
+              <div class="agent-icon">🏗️</div>
+              <div class="agent-info">
+                <div class="agent-name">Architect</div>
+                <div class="agent-role">Architecture · Stack · Data model</div>
+              </div>
             </div>
-            <div class="accent-card text-center">
-              <p class="text-xxl text-pink">-70%</p>
-              <p class="text-sm text-muted">temps de code review</p>
+            <div class="agent-card">
+              <div class="agent-icon">🎨</div>
+              <div class="agent-info">
+                <div class="agent-name">UX Designer</div>
+                <div class="agent-role">Design spec · Flows · Accessibilité</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <div class="agent-icon">📊</div>
+              <div class="agent-info">
+                <div class="agent-name">Scrum Master</div>
+                <div class="agent-role">Sprint planning · Stories · Vélocité</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <div class="agent-icon">👨‍💻</div>
+              <div class="agent-info">
+                <div class="agent-name">Developer</div>
+                <div class="agent-role">Implémentation · Code review · Refacto</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <div class="agent-icon">🧪</div>
+              <div class="agent-info">
+                <div class="agent-name">QA Engineer</div>
+                <div class="agent-role">Tests · Validation · Playwright</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <div class="agent-icon">💡</div>
+              <div class="agent-info">
+                <div class="agent-name">Creative Intelligence</div>
+                <div class="agent-role">Brainstorm · Idéation · Deep research</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <div class="agent-icon">🎯</div>
+              <div class="agent-info">
+                <div class="agent-name">BMad Master</div>
+                <div class="agent-role">Orchestration · Routing · Workflow status</div>
+              </div>
             </div>
           </div>
-          <p class="text-muted mt-md">Stocker l'intention. Versionner l'intention. Greenfield &amp; brownfield.</p>
+        </div>
+      </section>
+
+      <!-- ========== 10. WORKFLOW ========== -->
+      <section class="slide-workflow" data-transition="slide">
+        <div class="slide-content">
+          <h2 class="text-center">Le <span class="gradient-text">workflow</span></h2>
+          <div class="workflow-flow mt-lg">
+            <div class="wf-phase wf-phase-cyan">
+              <div class="wf-number">Phase 1</div>
+              <div class="wf-title">Analyse</div>
+              <div class="wf-items">
+                <span class="wf-item-main">Product Brief</span>
+                <span>Objectifs &amp; vision</span>
+                <span>Contraintes &amp; risques</span>
+                <span class="wf-item-main">Research</span>
+                <span>Benchmark marché</span>
+              </div>
+              <div class="wf-agent">🧑‍💼 Business Analyst</div>
+            </div>
+            <svg class="wf-arrow" viewBox="0 0 40 20"><path d="M0,10 L28,10" stroke="url(#g-cv)" stroke-width="2" fill="none"/><polygon points="28,5 38,10 28,15" fill="url(#g-cv)"/></svg>
+            <div class="wf-phase wf-phase-violet">
+              <div class="wf-number">Phase 2</div>
+              <div class="wf-title">Planning</div>
+              <div class="wf-items">
+                <span class="wf-item-main">PRD</span>
+                <span>User stories &amp; epics</span>
+                <span>Functional requirements</span>
+                <span class="wf-item-main">Tech Spec</span>
+                <span>NFRs &amp; contraintes</span>
+              </div>
+              <div class="wf-agent">📋 Product Manager</div>
+            </div>
+            <svg class="wf-arrow" viewBox="0 0 40 20"><path d="M0,10 L28,10" stroke="url(#g-vp)" stroke-width="2" fill="none"/><polygon points="28,5 38,10 28,15" fill="url(#g-vp)"/></svg>
+            <div class="wf-phase wf-phase-green">
+              <div class="wf-number">Phase 3</div>
+              <div class="wf-title">Solution</div>
+              <div class="wf-items">
+                <span class="wf-item-main">Architecture</span>
+                <span>Stack &amp; composants</span>
+                <span>Data model &amp; API</span>
+                <span class="wf-item-main">UX Design</span>
+                <span>Gate check</span>
+              </div>
+              <div class="wf-agent">🏗️ Architect · 🎨 UX</div>
+            </div>
+            <svg class="wf-arrow" viewBox="0 0 40 20"><path d="M0,10 L28,10" stroke="url(#g-cg)" stroke-width="2" fill="none"/><polygon points="28,5 38,10 28,15" fill="url(#g-cg)"/></svg>
+            <div class="wf-phase wf-phase-pink">
+              <div class="wf-number">Phase 4</div>
+              <div class="wf-title">Implém.</div>
+              <div class="wf-items">
+                <span class="wf-item-main">Sprint Planning</span>
+                <span>Story creation</span>
+                <span class="wf-item-main">Development</span>
+                <span>Code review &amp; tests</span>
+                <span class="wf-item-main">QA &amp; validation</span>
+              </div>
+              <div class="wf-agent">👨‍💻 Dev · 📊 SM · 🧪 QA</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 10. LES GAINS ========== -->
+      <section class="slide-gains" data-transition="slide">
+        <div class="slide-content">
+          <h2 class="text-center">Les <span class="gradient-electric">vrais gains</span></h2>
+          <div class="gains-grid mt-lg">
+            <div class="gain-block">
+              <span class="gain-value text-cyan">57%</span>
+              <span class="gain-label">coûts</span>
+            </div>
+            <div class="gain-block">
+              <span class="gain-value text-violet">3x</span>
+              <span class="gain-label">vitesse</span>
+            </div>
+            <div class="gain-block">
+              <span class="gain-value text-green">6h</span>
+              <span class="gain-label">planning</span>
+            </div>
+            <div class="gain-block">
+              <span class="gain-value text-pink">-70%</span>
+              <span class="gain-label">review</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -167,44 +364,119 @@
       <section class="slide-limits" data-transition="slide">
         <div class="slide-content">
           <h2>Les <span class="gradient-sunset">limites</span> honnêtes</h2>
-          <div class="accent-line"></div>
-          <ul class="mt-md">
-            <li><strong>Pas pour tous les projets</strong> — même en mode "quick", ~2h d'init à discuter avec Claude. Ça bouffe vos tokens.</li>
-            <li><strong>Rentable sur les gros systèmes</strong> — quand il faut se poser, réfléchir, structurer.</li>
-            <li><strong>Le cadre est encore fragile</strong> — on peut très vite redériver dans du Claude classique.</li>
-            <li><strong>La clé : la rigueur</strong> — suivre les étapes, les agents, le workflow. Sinon on recrée de l'indéterminisme.</li>
-          </ul>
-          <p class="text-muted mt-md"><em>Le but de BMAD est de créer du déterminisme. Si on ne suit pas le cadre, on perd tout.</em></p>
+          <div class="limits-grid mt-lg">
+            <div class="limit-block">
+              <div class="limit-icon">⏱</div>
+              <div class="limit-text">~2h d'init minimum</div>
+            </div>
+            <div class="limit-block">
+              <div class="limit-icon">🪙</div>
+              <div class="limit-text">Ça bouffe vos tokens</div>
+            </div>
+            <div class="limit-block">
+              <div class="limit-icon">⚡</div>
+              <div class="limit-text">Cadre encore fragile</div>
+            </div>
+            <div class="limit-block">
+              <div class="limit-icon">🎯</div>
+              <div class="limit-text">Rigueur = déterminisme</div>
+            </div>
+          </div>
+          <p class="text-muted text-sm text-center mt-lg"><em>Sans discipline, on recrée le chaos.</em></p>
         </div>
       </section>
 
       <!-- ========== 11. LE LIVRE N'EST PAS ÉCRIT ========== -->
       <section class="slide-book" data-transition="fade">
         <div class="slide-content text-center">
-          <h2><span class="gradient-hot">Le livre n'est pas encore écrit.</span></h2>
-          <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
-          <p class="text-lg mt-md">BMAD ouvre les chakras. Pose les bonnes questions méthodologiques.</p>
-          <p class="text-muted mt-sm">D'une semaine à l'autre, cette conf peut être démodée.</p>
-          <p class="mt-md"><em>Mais c'est le premier chapitre — critiquable et brillant.</em></p>
+          <h2 class="text-xxl"><span class="gradient-hot">Le livre n'est pas<br>encore écrit.</span></h2>
+          <p class="text-muted text-md mt-lg">Premier chapitre — critiquable et brillant.</p>
         </div>
       </section>
 
       <!-- ========== 12. LIVE DEMO ========== -->
       <section class="slide-demo" data-transition="fade">
         <div class="slide-content text-center">
-          <h2 class="glow-cyan text-xxl">Live Demo</h2>
-          <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
-          <p class="text-lg mt-md">Voyons ça en vrai.</p>
+          <div class="terminal-frame">
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-body">
+              <p class="text-mono text-muted text-sm">$ claude</p>
+              <h2 class="glow-cyan text-xxl mt-sm">Live Demo</h2>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ========== 13. MERCI ========== -->
+      <!-- ========== 13. INSTALL SIMULATION ========== -->
+      <section class="slide-install" data-transition="fade">
+        <div class="slide-content text-center">
+          <div class="terminal-frame terminal-wide">
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-bar-title">~/my-project</span>
+            </div>
+            <div class="terminal-body terminal-body-left">
+              <div class="term-line tl-1"><span class="t-prompt">$</span> npx bmad-method install</div>
+              <div class="term-line tl-2 t-blank">&nbsp;</div>
+              <div class="term-line tl-3"><span class="t-question">◇</span>  Installation directory:</div>
+              <div class="term-line tl-4"><span class="t-dim">│</span>  <span class="t-dim">~/my-project</span></div>
+              <div class="term-line tl-5"><span class="t-dim">│</span></div>
+              <div class="term-line tl-6"><span class="t-success">●</span>  Resolved: <span class="t-answer">~/my-project</span></div>
+              <div class="term-line tl-7"><span class="t-dim">│</span>  Directory contains <span class="t-answer">3</span> item(s)</div>
+              <div class="term-line tl-8"><span class="t-dim">│</span></div>
+              <div class="term-line tl-9"><span class="t-question">◇</span>  Install to this directory?</div>
+              <div class="term-line tl-10"><span class="t-dim">│</span>  <span class="t-success">Yes</span></div>
+              <div class="term-line tl-11"><span class="t-dim">│</span></div>
+              <div class="term-line tl-12"><span class="t-brand">◆</span>  Select modules to install:</div>
+              <div class="term-line tl-13"><span class="t-dim">│</span></div>
+              <div class="term-line tl-14"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Core Module <span class="t-dim">(always installed)</span></div>
+              <div class="term-line tl-15"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Method Agile-AI Driven-Dev</div>
+              <div class="term-line tl-16"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Builder</div>
+              <div class="term-line tl-17"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Creative Intelligence Suite</div>
+              <div class="term-line tl-18"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Game Dev Studio</div>
+              <div class="term-line tl-19"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Test Architect</div>
+              <div class="term-line tl-20"><span class="t-dim">│</span></div>
+              <div class="term-line tl-21"><span class="t-question">◇</span>  Add custom modules from your computer?</div>
+              <div class="term-line tl-22"><span class="t-dim">│</span>  <span class="t-dim">No</span></div>
+              <div class="term-line tl-23"><span class="t-dim">│</span></div>
+              <div class="term-line tl-24"><span class="t-brand">◆</span>  Integrate with:</div>
+              <div class="term-line tl-25"><span class="t-dim">│</span></div>
+              <div class="term-line tl-26"><span class="t-dim">│</span>  <span class="t-selected">◼</span> Claude Code <span class="t-warning">⭐</span></div>
+              <div class="term-line tl-27"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cursor <span class="t-warning">⭐</span></div>
+              <div class="term-line tl-28"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cline</div>
+              <div class="term-line tl-29"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Codex</div>
+              <div class="term-line tl-30"><span class="t-dim">│</span>  <span class="t-dim">...</span></div>
+              <div class="term-line tl-31"><span class="t-dim">│</span></div>
+              <div class="term-line tl-32"><span class="t-success">✓</span> Installing modules...</div>
+              <div class="term-line tl-33"><span class="t-success">✓</span> Creating agent prompts...</div>
+              <div class="term-line tl-34"><span class="t-success">✓</span> Generating configs...</div>
+              <div class="term-line tl-35 t-blank">&nbsp;</div>
+              <div class="term-line tl-36 t-success-box">  ✅ BMAD installed! Run /bmad-help to start</div>
+              <div class="term-line tl-37"><span class="t-prompt">$</span> <span class="t-cursor">█</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 14. MERCI ========== -->
       <section class="slide-thanks" data-transition="fade">
         <div class="slide-content text-center">
-          <h2><span class="gradient-text">Merci !</span></h2>
-          <div class="accent-line" style="margin-left:auto;margin-right:auto;"></div>
-          <p class="mt-md">Clément Raussin · <strong>Qim Info</strong></p>
-          <p class="text-muted mt-sm text-sm">buildmode.dev · github.com/bmad-code-org/BMAD-METHOD</p>
+          <h2 class="text-xxl"><span class="gradient-text">Merci !</span></h2>
+          <div class="accent-line accent-line-center mt-md"></div>
+          <div class="tag-row mt-lg">
+            <span class="tag tag-cyan">Clément Raussin</span>
+            <span class="tag tag-violet">Qim Info</span>
+          </div>
+          <div class="tag-row mt-sm">
+            <span class="tag tag-muted">buildmode.dev</span>
+            <span class="tag tag-muted">github.com/bmad-code-org/BMAD-METHOD</span>
+          </div>
         </div>
       </section>
 
@@ -225,6 +497,23 @@
       height: 1080,
       margin: 0,
       center: true
+    })
+
+    // Auto-scroll terminal: follow each line as it appears
+    Reveal.on('slidechanged', e => {
+      const body = e.currentSlide.querySelector('.terminal-body')
+      if (!body) return
+      body.scrollTop = 0
+      body.querySelectorAll('.term-line').forEach(line => {
+        const delay = parseFloat(getComputedStyle(line).animationDelay) * 1000
+        setTimeout(() => {
+          const lineBottom = line.offsetTop + line.offsetHeight
+          const visibleBottom = body.scrollTop + body.clientHeight
+          if (lineBottom > visibleBottom - 20) {
+            body.scrollTo({ top: lineBottom - body.clientHeight + 40, behavior: 'smooth' })
+          }
+        }, delay + 250)
+      })
     })
   </script>
 </body>

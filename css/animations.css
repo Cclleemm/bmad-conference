@@ -1,3 +1,390 @@
-/* conf-bmad — Animations */
-/* Custom @keyframes and .anim-* classes */
-/* Populated in STORY-004 */
+/* ============================================
+   conf-bmad — Animations
+   GPU-composited only (transform + opacity)
+   Per-slide varied entrance effects
+   ============================================ */
+
+/* --- Base Keyframes --- */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes expandWidth {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes ringExpand {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --- 1. Title Slide — staggered fade up --- */
+
+.slide-title.present .deco-corners::before,
+.slide-title.present .deco-corners::after {
+  animation: fadeIn 800ms ease-out both;
+}
+
+.slide-title.present h1 {
+  animation: fadeUp 600ms ease-out 100ms both;
+}
+
+.slide-title.present .accent-line {
+  animation: expandWidth 500ms ease-out 400ms both;
+  transform-origin: center;
+}
+
+.slide-title.present p {
+  animation: fadeIn 500ms ease-out 500ms both;
+}
+
+.slide-title.present .tag-row {
+  animation: fadeUp 500ms ease-out 650ms both;
+}
+
+/* --- 2. Shock Slide — impact scale + ring --- */
+
+.slide-shock.present .deco-ring {
+  animation: ringExpand 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-shock.present h2 {
+  animation: scaleIn 700ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.slide-shock.present .deco-poop {
+  animation: fadeUp 800ms ease-out 500ms both;
+}
+
+/* --- 3. Whoami Slide — left content + right deco --- */
+
+.slide-whoami.present .split-main h2 {
+  animation: slideFromLeft 500ms ease-out both;
+}
+
+.slide-whoami.present .accent-line {
+  animation: expandWidth 400ms ease-out 200ms both;
+  transform-origin: left;
+}
+
+.slide-whoami.present .keyword {
+  animation: slideFromLeft 400ms ease-out both;
+}
+.slide-whoami.present .keyword:nth-child(1) { animation-delay: 300ms; }
+.slide-whoami.present .keyword:nth-child(2) { animation-delay: 450ms; }
+.slide-whoami.present .keyword:nth-child(3) { animation-delay: 600ms; }
+
+.slide-whoami.present .split-main p {
+  animation: fadeIn 400ms ease-out 750ms both;
+}
+
+.slide-whoami.present .deco-hex {
+  animation: fadeIn 1200ms ease-out 200ms both;
+}
+
+/* --- 4. Reality Slide — before/arrow/after sequence --- */
+
+.slide-reality.present .reality-before {
+  animation: slideFromLeft 500ms ease-out 100ms both;
+}
+
+.slide-reality.present .reality-arrow {
+  animation: fadeIn 400ms ease-out 500ms both;
+}
+
+.slide-reality.present .reality-after {
+  animation: slideFromRight 500ms ease-out 700ms both;
+}
+
+/* --- 5. Plagues Slide — staggered card pop --- */
+
+.slide-plagues.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-plagues.present .plague-card {
+  animation: scaleIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-plagues.present .plague-card:nth-child(1) { animation-delay: 200ms; }
+.slide-plagues.present .plague-card:nth-child(2) { animation-delay: 350ms; }
+.slide-plagues.present .plague-card:nth-child(3) { animation-delay: 500ms; }
+.slide-plagues.present .plague-card:nth-child(4) { animation-delay: 650ms; }
+
+/* --- 6. Scale Slide — sides slide in from edges --- */
+
+.slide-scale.present .versus-side:first-child {
+  animation: slideFromLeft 600ms ease-out 100ms both;
+}
+
+.slide-scale.present .versus-divider {
+  animation: fadeIn 500ms ease-out 400ms both;
+}
+
+.slide-scale.present .versus-side:last-child {
+  animation: slideFromRight 600ms ease-out 100ms both;
+}
+
+/* --- 7. Question Slide — lines extend, text reveals --- */
+
+.slide-question.present .deco-line-h:first-of-type {
+  animation: expandWidth 600ms ease-out 100ms both;
+  transform-origin: center;
+}
+
+.slide-question.present h2 {
+  animation: fadeIn 600ms ease-out 400ms both;
+}
+
+.slide-question.present .gradient-text {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+  animation-delay: 800ms;
+}
+
+.slide-question.present .deco-line-h:last-of-type {
+  animation: expandWidth 600ms ease-out 700ms both;
+  transform-origin: center;
+}
+
+/* --- 8. BMAD Slide — title + pillars stagger --- */
+
+.slide-bmad.present h2 {
+  animation: scaleIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-bmad.present p:first-of-type {
+  animation: fadeIn 400ms ease-out 200ms both;
+}
+
+.slide-bmad.present .pillar {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-bmad.present .pillar:nth-child(1) { animation-delay: 400ms; }
+.slide-bmad.present .pillar:nth-child(2) { animation-delay: 550ms; }
+.slide-bmad.present .pillar:nth-child(3) { animation-delay: 700ms; }
+
+.slide-bmad.present .tag-row {
+  animation: fadeIn 400ms ease-out 900ms both;
+}
+
+/* --- 9. Agents Slide — cards stagger in --- */
+
+.slide-agents.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-agents.present .agent-card {
+  animation: scaleIn 350ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-agents.present .agent-card:nth-child(1) { animation-delay: 150ms; }
+.slide-agents.present .agent-card:nth-child(2) { animation-delay: 250ms; }
+.slide-agents.present .agent-card:nth-child(3) { animation-delay: 350ms; }
+.slide-agents.present .agent-card:nth-child(4) { animation-delay: 450ms; }
+.slide-agents.present .agent-card:nth-child(5) { animation-delay: 550ms; }
+.slide-agents.present .agent-card:nth-child(6) { animation-delay: 650ms; }
+.slide-agents.present .agent-card:nth-child(7) { animation-delay: 750ms; }
+.slide-agents.present .agent-card:nth-child(8) { animation-delay: 850ms; }
+.slide-agents.present .agent-card:nth-child(9) { animation-delay: 950ms; }
+
+/* --- 10. Workflow Slide — phases cascade left to right --- */
+
+.slide-workflow.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-workflow.present .wf-phase {
+  animation: scaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-workflow.present .wf-phase:nth-child(1) { animation-delay: 200ms; }
+.slide-workflow.present .wf-phase:nth-child(2) { animation-delay: 500ms; }
+.slide-workflow.present .wf-phase:nth-child(3) { animation-delay: 800ms; }
+.slide-workflow.present .wf-phase:nth-child(4) { animation-delay: 1100ms; }
+
+.slide-workflow.present .wf-arrow {
+  animation: fadeIn 300ms ease-out both;
+}
+
+.slide-workflow.present .wf-arrow:nth-of-type(1) { animation-delay: 400ms; }
+.slide-workflow.present .wf-arrow:nth-of-type(2) { animation-delay: 700ms; }
+.slide-workflow.present .wf-arrow:nth-of-type(3) { animation-delay: 1000ms; }
+
+/* --- 10. Gains Slide — numbers pop in staggered --- */
+
+.slide-gains.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-gains.present .gain-block {
+  animation: scaleIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.slide-gains.present .gain-block:nth-child(1) { animation-delay: 200ms; }
+.slide-gains.present .gain-block:nth-child(2) { animation-delay: 400ms; }
+.slide-gains.present .gain-block:nth-child(3) { animation-delay: 600ms; }
+.slide-gains.present .gain-block:nth-child(4) { animation-delay: 800ms; }
+
+/* --- 10. Limits Slide — blocks fade up staggered --- */
+
+.slide-limits.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-limits.present .limit-block {
+  animation: fadeUp 400ms ease-out both;
+}
+
+.slide-limits.present .limit-block:nth-child(1) { animation-delay: 200ms; }
+.slide-limits.present .limit-block:nth-child(2) { animation-delay: 350ms; }
+.slide-limits.present .limit-block:nth-child(3) { animation-delay: 500ms; }
+.slide-limits.present .limit-block:nth-child(4) { animation-delay: 650ms; }
+
+.slide-limits.present > .slide-content > p {
+  animation: fadeIn 400ms ease-out 850ms both;
+}
+
+/* --- 11. Book Slide — slow dramatic entrance --- */
+
+.slide-book.present h2 {
+  animation: fadeUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-book.present p {
+  animation: fadeIn 800ms ease-out 600ms both;
+}
+
+/* --- 12. Demo Slide — terminal slides up + cursor blink --- */
+
+.slide-demo.present .terminal-frame {
+  animation: fadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-demo.present .terminal-body .text-mono::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: var(--color-cyan);
+  margin-left: 4px;
+}
+
+.slide-demo.present .glow-cyan {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  animation-delay: 600ms;
+}
+
+/* --- 13. Install Slide — sequential terminal lines --- */
+
+.slide-install.present .terminal-frame {
+  animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-install .term-line {
+  opacity: 0;
+}
+
+.slide-install.present .term-line {
+  animation: fadeIn 200ms ease-out both;
+}
+
+.slide-install.present .tl-1  { animation-delay: 400ms; }
+.slide-install.present .tl-2  { animation-delay: 600ms; }
+.slide-install.present .tl-3  { animation-delay: 800ms; }
+.slide-install.present .tl-4  { animation-delay: 1000ms; }
+.slide-install.present .tl-5  { animation-delay: 1100ms; }
+.slide-install.present .tl-6  { animation-delay: 1300ms; }
+.slide-install.present .tl-7  { animation-delay: 1500ms; }
+.slide-install.present .tl-8  { animation-delay: 1600ms; }
+.slide-install.present .tl-9  { animation-delay: 1900ms; }
+.slide-install.present .tl-10 { animation-delay: 2100ms; }
+.slide-install.present .tl-11 { animation-delay: 2200ms; }
+.slide-install.present .tl-12 { animation-delay: 2400ms; }
+.slide-install.present .tl-13 { animation-delay: 2500ms; }
+.slide-install.present .tl-14 { animation-delay: 2700ms; }
+.slide-install.present .tl-15 { animation-delay: 2800ms; }
+.slide-install.present .tl-16 { animation-delay: 2900ms; }
+.slide-install.present .tl-17 { animation-delay: 3000ms; }
+.slide-install.present .tl-18 { animation-delay: 3100ms; }
+.slide-install.present .tl-19 { animation-delay: 3200ms; }
+.slide-install.present .tl-20 { animation-delay: 3300ms; }
+.slide-install.present .tl-21 { animation-delay: 3500ms; }
+.slide-install.present .tl-22 { animation-delay: 3700ms; }
+.slide-install.present .tl-23 { animation-delay: 3800ms; }
+.slide-install.present .tl-24 { animation-delay: 4000ms; }
+.slide-install.present .tl-25 { animation-delay: 4100ms; }
+.slide-install.present .tl-26 { animation-delay: 4300ms; }
+.slide-install.present .tl-27 { animation-delay: 4400ms; }
+.slide-install.present .tl-28 { animation-delay: 4500ms; }
+.slide-install.present .tl-29 { animation-delay: 4600ms; }
+.slide-install.present .tl-30 { animation-delay: 4700ms; }
+.slide-install.present .tl-31 { animation-delay: 4900ms; }
+.slide-install.present .tl-32 { animation-delay: 5100ms; }
+.slide-install.present .tl-33 { animation-delay: 5400ms; }
+.slide-install.present .tl-34 { animation-delay: 5700ms; }
+.slide-install.present .tl-35 { animation-delay: 6000ms; }
+.slide-install.present .tl-36 { animation-delay: 6200ms; }
+.slide-install.present .tl-37 { animation-delay: 6600ms; }
+
+.slide-install.present .t-cursor {
+  animation: blink 1s step-end infinite;
+  animation-delay: 6600ms;
+}
+
+/* --- 14. Thanks Slide — gentle scale in --- */
+
+.slide-thanks.present h2 {
+  animation: scaleIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-thanks.present .accent-line {
+  animation: expandWidth 500ms ease-out 300ms both;
+  transform-origin: center;
+}
+
+.slide-thanks.present .tag-row:first-of-type {
+  animation: fadeUp 400ms ease-out 500ms both;
+}
+
+.slide-thanks.present .tag-row:last-of-type {
+  animation: fadeIn 400ms ease-out 700ms both;
+}
