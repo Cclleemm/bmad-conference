@@ -313,64 +313,41 @@
   animation-delay: 600ms;
 }
 
-/* --- 13. Install Slide — sequential terminal lines --- */
+/* --- 13-14. Terminal Slides — fragment-based reveal --- */
 
-.slide-install.present .terminal-frame {
+.slide-install.present .terminal-frame,
+.slide-wf-init.present .terminal-frame {
   animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.slide-install .term-line {
-  opacity: 0;
+.slide-install .terminal-body .fragment,
+.slide-wf-init .terminal-body .fragment {
+  transition: none;
 }
 
-.slide-install.present .term-line {
-  animation: fadeIn 200ms ease-out both;
+.slide-install .terminal-body .fragment.visible,
+.slide-wf-init .terminal-body .fragment.visible {
+  animation: fadeIn 300ms ease-out both;
 }
 
-.slide-install.present .tl-1  { animation-delay: 400ms; }
-.slide-install.present .tl-2  { animation-delay: 600ms; }
-.slide-install.present .tl-3  { animation-delay: 800ms; }
-.slide-install.present .tl-4  { animation-delay: 1000ms; }
-.slide-install.present .tl-5  { animation-delay: 1100ms; }
-.slide-install.present .tl-6  { animation-delay: 1300ms; }
-.slide-install.present .tl-7  { animation-delay: 1500ms; }
-.slide-install.present .tl-8  { animation-delay: 1600ms; }
-.slide-install.present .tl-9  { animation-delay: 1900ms; }
-.slide-install.present .tl-10 { animation-delay: 2100ms; }
-.slide-install.present .tl-11 { animation-delay: 2200ms; }
-.slide-install.present .tl-12 { animation-delay: 2400ms; }
-.slide-install.present .tl-13 { animation-delay: 2500ms; }
-.slide-install.present .tl-14 { animation-delay: 2700ms; }
-.slide-install.present .tl-15 { animation-delay: 2800ms; }
-.slide-install.present .tl-16 { animation-delay: 2900ms; }
-.slide-install.present .tl-17 { animation-delay: 3000ms; }
-.slide-install.present .tl-18 { animation-delay: 3100ms; }
-.slide-install.present .tl-19 { animation-delay: 3200ms; }
-.slide-install.present .tl-20 { animation-delay: 3300ms; }
-.slide-install.present .tl-21 { animation-delay: 3500ms; }
-.slide-install.present .tl-22 { animation-delay: 3700ms; }
-.slide-install.present .tl-23 { animation-delay: 3800ms; }
-.slide-install.present .tl-24 { animation-delay: 4000ms; }
-.slide-install.present .tl-25 { animation-delay: 4100ms; }
-.slide-install.present .tl-26 { animation-delay: 4300ms; }
-.slide-install.present .tl-27 { animation-delay: 4400ms; }
-.slide-install.present .tl-28 { animation-delay: 4500ms; }
-.slide-install.present .tl-29 { animation-delay: 4600ms; }
-.slide-install.present .tl-30 { animation-delay: 4700ms; }
-.slide-install.present .tl-31 { animation-delay: 4900ms; }
-.slide-install.present .tl-32 { animation-delay: 5100ms; }
-.slide-install.present .tl-33 { animation-delay: 5400ms; }
-.slide-install.present .tl-34 { animation-delay: 5700ms; }
-.slide-install.present .tl-35 { animation-delay: 6000ms; }
-.slide-install.present .tl-36 { animation-delay: 6200ms; }
-.slide-install.present .tl-37 { animation-delay: 6600ms; }
+.slide-pb.present .terminal-frame {
+  animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
-.slide-install.present .t-cursor {
+.slide-pb .terminal-body .fragment {
+  transition: none;
+}
+
+.slide-pb .terminal-body .fragment.visible {
+  animation: fadeIn 300ms ease-out both;
+}
+
+.slide-install.present .t-cursor,
+.slide-wf-init.present .t-cursor {
   animation: blink 1s step-end infinite;
-  animation-delay: 6600ms;
 }
 
-/* --- 14. Thanks Slide — gentle scale in --- */
+/* --- 15. Thanks Slide — gentle scale in --- */
 
 .slide-thanks.present h2 {
   animation: scaleIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;

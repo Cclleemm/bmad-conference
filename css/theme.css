@@ -838,6 +838,8 @@
 .t-success-box { color: var(--color-green); font-weight: 600; }
 .t-dim { color: var(--color-muted); }
 .t-cursor { color: var(--color-cyan); }
+.t-cyan { color: var(--color-cyan); }
+.t-pink { color: var(--color-pink); }
 
 /* --- Deco: Corner Brackets (title slide) --- */
 

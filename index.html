@@ -422,49 +422,273 @@
               <span class="terminal-bar-title">~/my-project</span>
             </div>
             <div class="terminal-body terminal-body-left">
-              <div class="term-line tl-1"><span class="t-prompt">$</span> npx bmad-method install</div>
-              <div class="term-line tl-2 t-blank">&nbsp;</div>
-              <div class="term-line tl-3"><span class="t-question">◇</span>  Installation directory:</div>
-              <div class="term-line tl-4"><span class="t-dim">│</span>  <span class="t-dim">~/my-project</span></div>
-              <div class="term-line tl-5"><span class="t-dim">│</span></div>
-              <div class="term-line tl-6"><span class="t-success">●</span>  Resolved: <span class="t-answer">~/my-project</span></div>
-              <div class="term-line tl-7"><span class="t-dim">│</span>  Directory contains <span class="t-answer">3</span> item(s)</div>
-              <div class="term-line tl-8"><span class="t-dim">│</span></div>
-              <div class="term-line tl-9"><span class="t-question">◇</span>  Install to this directory?</div>
-              <div class="term-line tl-10"><span class="t-dim">│</span>  <span class="t-success">Yes</span></div>
-              <div class="term-line tl-11"><span class="t-dim">│</span></div>
-              <div class="term-line tl-12"><span class="t-brand">◆</span>  Select modules to install:</div>
-              <div class="term-line tl-13"><span class="t-dim">│</span></div>
-              <div class="term-line tl-14"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Core Module <span class="t-dim">(always installed)</span></div>
-              <div class="term-line tl-15"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Method Agile-AI Driven-Dev</div>
-              <div class="term-line tl-16"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Builder</div>
-              <div class="term-line tl-17"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Creative Intelligence Suite</div>
-              <div class="term-line tl-18"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Game Dev Studio</div>
-              <div class="term-line tl-19"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Test Architect</div>
-              <div class="term-line tl-20"><span class="t-dim">│</span></div>
-              <div class="term-line tl-21"><span class="t-question">◇</span>  Add custom modules from your computer?</div>
-              <div class="term-line tl-22"><span class="t-dim">│</span>  <span class="t-dim">No</span></div>
-              <div class="term-line tl-23"><span class="t-dim">│</span></div>
-              <div class="term-line tl-24"><span class="t-brand">◆</span>  Integrate with:</div>
-              <div class="term-line tl-25"><span class="t-dim">│</span></div>
-              <div class="term-line tl-26"><span class="t-dim">│</span>  <span class="t-selected">◼</span> Claude Code <span class="t-warning">⭐</span></div>
-              <div class="term-line tl-27"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cursor <span class="t-warning">⭐</span></div>
-              <div class="term-line tl-28"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cline</div>
-              <div class="term-line tl-29"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Codex</div>
-              <div class="term-line tl-30"><span class="t-dim">│</span>  <span class="t-dim">...</span></div>
-              <div class="term-line tl-31"><span class="t-dim">│</span></div>
-              <div class="term-line tl-32"><span class="t-success">✓</span> Installing modules...</div>
-              <div class="term-line tl-33"><span class="t-success">✓</span> Creating agent prompts...</div>
-              <div class="term-line tl-34"><span class="t-success">✓</span> Generating configs...</div>
-              <div class="term-line tl-35 t-blank">&nbsp;</div>
-              <div class="term-line tl-36 t-success-box">  ✅ BMAD installed! Run /bmad-help to start</div>
-              <div class="term-line tl-37"><span class="t-prompt">$</span> <span class="t-cursor">█</span></div>
+              <!-- Bloc 0: visible dès l'entrée -->
+              <div class="term-line"><span class="t-prompt">$</span> npx bmad-method install</div>
+
+              <!-- Bloc 1: directory -->
+              <div class="fragment" data-fragment-index="0">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-question">◇</span>  Installation directory:</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-dim">~/my-project</span></div>
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-success">●</span>  Resolved: <span class="t-answer">~/my-project</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  Directory contains <span class="t-answer">3</span> item(s)</div>
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-question">◇</span>  Install to this directory?</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-success">Yes</span></div>
+              </div>
+
+              <!-- Bloc 2: modules -->
+              <div class="fragment" data-fragment-index="1">
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-brand">◆</span>  Select modules to install:</div>
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Core Module <span class="t-dim">(always installed)</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-selected">◼</span> BMad Method Agile-AI Driven-Dev</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Builder</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Creative Intelligence Suite</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> BMad Game Dev Studio</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Test Architect</div>
+              </div>
+
+              <!-- Bloc 3: custom + integration -->
+              <div class="fragment" data-fragment-index="2">
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-question">◇</span>  Add custom modules from your computer?</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-dim">No</span></div>
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-brand">◆</span>  Integrate with:</div>
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-selected">◼</span> Claude Code <span class="t-warning">⭐</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cursor <span class="t-warning">⭐</span></div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Cline</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-unselected">◻</span> Codex</div>
+                <div class="term-line"><span class="t-dim">│</span>  <span class="t-dim">...</span></div>
+              </div>
+
+              <!-- Bloc 4: install success -->
+              <div class="fragment" data-fragment-index="3">
+                <div class="term-line"><span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-success">✓</span> Installing modules...</div>
+                <div class="term-line"><span class="t-success">✓</span> Creating agent prompts...</div>
+                <div class="term-line"><span class="t-success">✓</span> Generating configs...</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line t-success-box">  ✅ BMAD installed! Run /bmad-help to start</div>
+                <div class="term-line"><span class="t-prompt">$</span> <span class="t-cursor">█</span></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ========== 14. MERCI ========== -->
+      <!-- ========== 14. WORKFLOW-INIT SIMULATION ========== -->
+      <section class="slide-wf-init" data-transition="fade">
+        <div class="slide-content text-center">
+          <div class="terminal-frame terminal-wide">
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-bar-title">~/my-project — claude</span>
+            </div>
+            <div class="terminal-body terminal-body-left">
+              <!-- Bloc 0: visible dès l'entrée -->
+              <div class="term-line"><span class="t-prompt">$</span> /workflow-init</div>
+
+              <!-- Bloc 1: welcome -->
+              <div class="fragment" data-fragment-index="0">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-brand">⏺</span> <span class="t-answer">BMAD Method v6 - Initialization</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  Welcome! I'm the BMad Master.</span></div>
+                <div class="term-line"><span class="t-dim">  Let me check your project...</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-success">⏺</span> No existing BMAD installation — fresh setup.</div>
+              </div>
+
+              <!-- Bloc 2: project name -->
+              <div class="fragment" data-fragment-index="1">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Project Name</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"> <span class="t-dim">❯</span> <span class="t-answer">Fondue DevOps MeetUp Geneva</span></div>
+              </div>
+
+              <!-- Bloc 3: project type -->
+              <div class="fragment" data-fragment-index="2">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Project Type</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"> <span class="t-dim">❯</span> <span class="t-answer">Web Application</span></div>
+                <div class="term-line"><span class="t-dim">   Web app (SPA, SSR, full-stack web)</span></div>
+              </div>
+
+              <!-- Bloc 4: level -->
+              <div class="fragment" data-fragment-index="3">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Level</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"> <span class="t-dim">❯</span> <span class="t-answer">Level 3 - Complex</span></div>
+                <div class="term-line"><span class="t-dim">   Complex integration (12-40 stories)</span></div>
+              </div>
+
+              <!-- Bloc 5: config table + files -->
+              <div class="fragment" data-fragment-index="4">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> Project Configuration:</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  ┌─────────┬─────────────────────────────┐</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Name    <span class="t-dim">│</span> <span class="t-answer">Fondue DevOps MeetUp Geneva</span> <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  ├─────────┼─────────────────────────────┤</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Type    <span class="t-dim">│</span> <span class="t-answer">Web Application</span>             <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  ├─────────┼─────────────────────────────┤</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Level   <span class="t-dim">│</span> <span class="t-answer">3</span> <span class="t-dim">(Complex — 12-40 stories)</span>  <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  └─────────┴─────────────────────────────┘</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line">  <span class="t-success">✓</span> bmad/config.yaml</div>
+                <div class="term-line">  <span class="t-success">✓</span> docs/bmm-workflow-status.yaml</div>
+                <div class="term-line">  <span class="t-success">✓</span> docs/stories/</div>
+              </div>
+
+              <!-- Bloc 6: workflow path -->
+              <div class="fragment" data-fragment-index="5">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> Workflow Path for Level 3:</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  ┌─────────┬──────────────────────┬─────────────┐</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Phase 1 <span class="t-dim">│</span> <span class="t-cyan">/product-brief</span>       <span class="t-dim">│</span> <span class="t-warning">Recommended</span> <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Phase 2 <span class="t-dim">│</span> <span class="t-cyan">/prd</span>                 <span class="t-dim">│</span> <span class="t-pink">Required</span>    <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Phase 3 <span class="t-dim">│</span> <span class="t-cyan">/architecture</span>        <span class="t-dim">│</span> <span class="t-pink">Required</span>    <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  │</span> Phase 4 <span class="t-dim">│</span> <span class="t-cyan">/sprint-planning</span> → … <span class="t-dim">│</span> <span class="t-pink">Required</span>    <span class="t-dim">│</span></div>
+                <div class="term-line"><span class="t-dim">  └─────────┴──────────────────────┴─────────────┘</span></div>
+              </div>
+
+              <!-- Bloc 7: next step -->
+              <div class="fragment" data-fragment-index="6">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Next Step</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"> <span class="t-dim">❯</span> <span class="t-success">Product Brief</span> <span class="t-dim">(Recommended)</span></div>
+                <div class="term-line"><span class="t-dim">   Start Phase 1 — define vision and scope</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 15. PRODUCT BRIEF SIMULATION ========== -->
+      <section class="slide-pb" data-transition="fade">
+        <div class="slide-content text-center">
+          <div class="terminal-frame terminal-wide">
+            <div class="terminal-bar">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-bar-title">~/my-project — claude</span>
+            </div>
+            <div class="terminal-body terminal-body-left">
+              <!-- Bloc 0: visible dès l'entrée -->
+              <div class="term-line"><span class="t-prompt">$</span> /product-brief</div>
+
+              <!-- Bloc 1: welcome BA -->
+              <div class="fragment" data-fragment-index="0">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-brand">⏺</span> <span class="t-answer">Product Brief — Fondue DevOps MeetUp Geneva</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  I'm your Business Analyst.</span></div>
+                <div class="term-line"><span class="t-dim">  Let's go section by section (~20-40 min).</span></div>
+              </div>
+
+              <!-- Bloc 2: section 1 - executive summary question -->
+              <div class="fragment" data-fragment-index="1">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Section 1: Executive Summary</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  1. What are you building?</span></div>
+                <div class="term-line"><span class="t-dim">  2. Who is it for?</span></div>
+                <div class="term-line"><span class="t-dim">  3. Why does it matter?</span></div>
+              </div>
+
+              <!-- Bloc 3: user answer + BA response -->
+              <div class="fragment" data-fragment-index="2">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-prompt">❯</span> <span class="t-answer">Un site pour le DevOps Meetup Geneva qui permet</span></div>
+                <div class="term-line"><span class="t-answer">  de choisir sa fondue et le nb de cornichons.</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-success">⏺</span> Excellent ! Je retiens :</div>
+                <div class="term-line"><span class="t-dim">  Web app for DevOps Meetup Geneva — fondue choice</span></div>
+                <div class="term-line"><span class="t-dim">  + pickle count. Streamline event organization.</span></div>
+              </div>
+
+              <!-- Bloc 4: section 2 - problem -->
+              <div class="fragment" data-fragment-index="3">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Section 2: Problem Statement</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  Quel problème ce site résout ?</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-prompt">❯</span> <span class="t-answer">C'est la bagarre pour les cornichons.</span></div>
+                <div class="term-line"><span class="t-answer">  Il n'y a jamais assez de peau.</span></div>
+              </div>
+
+              <!-- Bloc 5: section 3 - audience -->
+              <div class="fragment" data-fragment-index="4">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"> <span class="t-question">☐</span> Section 3: Target Audience</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-prompt">❯</span> <span class="t-answer">~50 personnes, tech-savvy, dans une semaine.</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-success">⏺</span> Une semaine ! Timing serré. On accélère.</div>
+              </div>
+
+              <!-- Bloc 6: quick fire questions -->
+              <div class="fragment" data-fragment-index="5">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"><span class="t-dim">←</span> <span class="t-question">☐</span> Fondues  <span class="t-question">☐</span> Admin  <span class="t-question">☐</span> Tech Stack  <span class="t-success">✔</span> Submit <span class="t-dim">→</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  Quels types de fondue ?</span></div>
+                <div class="term-line"><span class="t-dim">❯</span> <span class="t-answer">Moitié-moitié, Vacherin, Tomate</span></div>
+                <div class="term-line"><span class="t-dim">  Les 3 classiques suisses</span></div>
+              </div>
+
+              <!-- Bloc 7: tech stack -->
+              <div class="fragment" data-fragment-index="6">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  Côté technique ?</span></div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  1.</span> React / Next.js</div>
+                <div class="term-line"><span class="t-dim">  2.</span> Vue / Nuxt</div>
+                <div class="term-line"><span class="t-dim">  3.</span> Simple HTML/JS</div>
+                <div class="term-line"><span class="t-dim">❯ 4.</span> <span class="t-answer">Pas de préférence — tu choisis</span></div>
+              </div>
+
+              <!-- Bloc 8: generation -->
+              <div class="fragment" data-fragment-index="7">
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">─────────────────────────────────────────────────</span></div>
+                <div class="term-line"><span class="t-success">✓</span> Generating product brief...</div>
+                <div class="term-line"><span class="t-success">✓</span> Writing docs/product-brief.md</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line t-success-box">  ✅ Product Brief complete!</div>
+                <div class="term-line t-blank">&nbsp;</div>
+                <div class="term-line"><span class="t-dim">  Next: Run</span> <span class="t-cyan">/prd</span> <span class="t-dim">to create the PRD.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 16. MERCI ========== -->
       <section class="slide-thanks" data-transition="fade">
         <div class="slide-content text-center">
           <h2 class="text-xxl"><span class="gradient-text">Merci !</span></h2>
@@ -499,21 +723,23 @@
       center: true
     })
 
-    // Auto-scroll terminal: follow each line as it appears
+    // Scroll terminal when fragments appear
+    Reveal.on('fragmentshown', e => {
+      const body = e.fragment.closest('.terminal-body')
+      if (!body) return
+      setTimeout(() => {
+        const bottom = e.fragment.offsetTop + e.fragment.offsetHeight
+        const visible = body.scrollTop + body.clientHeight
+        if (bottom > visible - 20) {
+          body.scrollTo({ top: bottom - body.clientHeight + 40, behavior: 'smooth' })
+        }
+      }, 50)
+    })
+
+    // Reset scroll when entering terminal slides
     Reveal.on('slidechanged', e => {
       const body = e.currentSlide.querySelector('.terminal-body')
-      if (!body) return
-      body.scrollTop = 0
-      body.querySelectorAll('.term-line').forEach(line => {
-        const delay = parseFloat(getComputedStyle(line).animationDelay) * 1000
-        setTimeout(() => {
-          const lineBottom = line.offsetTop + line.offsetHeight
-          const visibleBottom = body.scrollTop + body.clientHeight
-          if (lineBottom > visibleBottom - 20) {
-            body.scrollTo({ top: lineBottom - body.clientHeight + 40, behavior: 'smooth' })
-          }
-        }, delay + 250)
-      })
+      if (body) body.scrollTop = 0
     })
   </script>
 </body>
