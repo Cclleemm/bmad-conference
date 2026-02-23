@@ -347,7 +347,52 @@
   animation: blink 1s step-end infinite;
 }
 
-/* --- 15. Thanks Slide — gentle scale in --- */
+/* --- 16. Roadmap Slide — staggered nodes + connectors --- */
+
+@keyframes pulseNode {
+  0%, 100% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(167, 139, 250, 0.5), 0 0 60px rgba(167, 139, 250, 0.2); }
+}
+
+.slide-roadmap.present h2 {
+  animation: fadeUp 500ms ease-out both;
+}
+
+.slide-roadmap.present h2 + p {
+  animation: fadeIn 400ms ease-out 200ms both;
+}
+
+.slide-roadmap.present .roadmap-step {
+  animation: scaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-roadmap.present .roadmap-step:nth-of-type(1) { animation-delay: 300ms; }
+.slide-roadmap.present .roadmap-step:nth-of-type(2) { animation-delay: 500ms; }
+.slide-roadmap.present .roadmap-step:nth-of-type(3) { animation-delay: 700ms; }
+.slide-roadmap.present .roadmap-step:nth-of-type(4) { animation-delay: 900ms; }
+.slide-roadmap.present .roadmap-step:nth-of-type(5) { animation-delay: 1100ms; }
+.slide-roadmap.present .roadmap-step:nth-of-type(6) { animation-delay: 1300ms; }
+
+.slide-roadmap.present .roadmap-connector {
+  animation: fadeIn 300ms ease-out both;
+}
+
+.slide-roadmap.present .roadmap-connector:nth-of-type(1) { animation-delay: 400ms; }
+.slide-roadmap.present .roadmap-connector:nth-of-type(2) { animation-delay: 600ms; }
+.slide-roadmap.present .roadmap-connector:nth-of-type(3) { animation-delay: 800ms; }
+.slide-roadmap.present .roadmap-connector:nth-of-type(4) { animation-delay: 1000ms; }
+.slide-roadmap.present .roadmap-connector:nth-of-type(5) { animation-delay: 1200ms; }
+
+.slide-roadmap.present .roadmap-next .roadmap-node {
+  animation: pulseNode 2s ease-in-out infinite;
+  animation-delay: 1500ms;
+}
+
+.slide-roadmap.present .roadmap-here {
+  animation: fadeIn 400ms ease-out 1600ms both;
+}
+
+/* --- 17. Thanks Slide — gentle scale in --- */
 
 .slide-thanks.present h2 {
   animation: scaleIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;

@@ -841,6 +841,134 @@
 .t-cyan { color: var(--color-cyan); }
 .t-pink { color: var(--color-pink); }
 
+/* --- Roadmap (workflow progress) --- */
+
+.roadmap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 140px;
+}
+
+.roadmap-phase-tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.roadmap-node {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: var(--color-bg-surface);
+}
+
+.roadmap-cmd {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-top: 14px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.roadmap-here {
+  position: absolute;
+  bottom: -32px;
+  font-size: 0.8rem;
+  color: var(--color-cyan);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.roadmap-connector {
+  width: 60px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.roadmap-connector-dim {
+  color: rgba(90, 100, 130, 0.3);
+}
+
+/* Roadmap: done step */
+.roadmap-done .roadmap-node {
+  border-color: var(--color-green);
+  color: var(--color-green);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.25);
+}
+
+.roadmap-done .roadmap-cmd {
+  color: var(--color-green);
+}
+
+/* Roadmap: next step */
+.roadmap-next .roadmap-node {
+  border-color: var(--color-violet);
+  color: var(--color-violet);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.3);
+}
+
+.roadmap-next .roadmap-cmd {
+  color: var(--color-text-bright);
+}
+
+/* Roadmap: upcoming steps */
+.roadmap-upcoming .roadmap-node {
+  border-color: rgba(90, 100, 130, 0.25);
+  color: var(--color-muted);
+}
+
+.roadmap-upcoming .roadmap-cmd {
+  color: var(--color-muted);
+}
+
+/* Roadmap: Phase group */
+.roadmap-group {
+  position: relative;
+  background: rgba(90, 100, 130, 0.06);
+  border: 1px dashed rgba(90, 100, 130, 0.15);
+  border-radius: 20px;
+  padding: 10px 24px;
+}
+
+.roadmap-group-label {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg);
+  padding: 0 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.roadmap-group-content {
+  display: flex;
+  align-items: center;
+}
+
 /* --- Deco: Corner Brackets (title slide) --- */
 
 .deco-corners {
