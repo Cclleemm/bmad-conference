@@ -1,0 +1,13 @@
+{
+  "name": "conf-bmad",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "reveal.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
