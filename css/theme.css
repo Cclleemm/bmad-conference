@@ -457,6 +457,22 @@
   height: 550px;
 }
 
+/* --- Whoami Layout --- */
+
+.whoami-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--slide-padding);
+  box-sizing: border-box;
+}
+
+.whoami-split {
+  height: auto;
+  flex: 1;
+  padding: 0;
+}
+
 /* --- Whoami Tagline --- */
 
 .whoami-tagline {
@@ -471,6 +487,7 @@
   border-top: 1px solid rgba(139, 92, 246, 0.25);
   max-width: 900px;
   margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .whoami-tagline .text-cyan,
@@ -1433,9 +1450,26 @@
 
 /* --- Thanks Boom (confetti burst) --- */
 
+.slide-thanks .slide-content {
+  padding: 1.5rem var(--slide-padding);
+  gap: 0;
+}
+
+.slide-thanks .text-xxl {
+  margin-bottom: 0.3rem;
+}
+
+.slide-thanks .accent-line {
+  margin-bottom: 0.5rem;
+}
+
+.slide-thanks .mt-lg {
+  margin-top: 0.6rem !important;
+}
+
 .thanks-boom {
   position: relative;
-  margin-top: var(--spacing-md);
+  margin-top: 0.4rem;
 }
 
 /* Multi-layer flash */
@@ -1597,11 +1631,11 @@
 .boom-oui-wrap {
   position: relative;
   z-index: 4;
-  margin: var(--spacing-xs) 0;
+  margin: 0.2rem 0;
 }
 
 .boom-oui {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 1;
   display: inline-block;
@@ -1618,7 +1652,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  margin-top: 0.5rem;
 }
 
 .thanks-links {
@@ -1909,7 +1944,7 @@
 .deco-poop {
   width: 550px;
   height: auto;
-  opacity: 0.006;
+  opacity: 0.7;
   pointer-events: none;
   transform: translateY(15%);
 }
