@@ -1,3 +1,356 @@
-/* conf-bmad — Design System */
-/* Dark/geek theme custom properties and base styles */
-/* Populated in STORY-002 */
+/* ============================================
+   conf-bmad — Design System
+   Dark/geek theme for DevOps Meetup Geneva
+   Neon-gradient accents, elegant & restrained
+   ============================================ */
+
+/* --- Fonts --- */
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+/* --- Custom Properties --- */
+
+:root {
+  /* Base — deep dark with subtle cool undertone */
+  --color-bg: #0b0d14;
+  --color-bg-surface: #151929;
+  --color-bg-elevated: #1c2137;
+
+  /* Text — high contrast for projection */
+  --color-text: #c9d1d9;
+  --color-text-bright: #f0f4f8;
+  --color-muted: #5a6482;
+
+  /* Neon accents — flashy but restrained */
+  --color-cyan: #22d3ee;
+  --color-violet: #a78bfa;
+  --color-pink: #f472b6;
+  --color-green: #34d399;
+  --color-orange: #fb923c;
+
+  /* Gradients — the signature look */
+  --gradient-primary: linear-gradient(135deg, #22d3ee, #a78bfa);
+  --gradient-hot: linear-gradient(135deg, #a78bfa, #f472b6);
+  --gradient-electric: linear-gradient(135deg, #22d3ee, #34d399);
+  --gradient-sunset: linear-gradient(135deg, #f472b6, #fb923c);
+
+  /* Code */
+  --color-code-bg: #131620;
+  --color-border: rgba(168, 139, 250, 0.15);
+
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Font sizes — projection-optimized */
+  --font-size-xxl: 4rem;
+  --font-size-xl: 3rem;
+  --font-size-lg: 2rem;
+  --font-size-md: 1.5rem;
+  --font-size-sm: 1.2rem;
+  --font-size-xs: 1rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+
+  /* Animation */
+  --duration-fast: 300ms;
+  --duration-normal: 500ms;
+  --duration-slow: 800ms;
+
+  /* Layout */
+  --slide-padding: 4rem;
+}
+
+/* --- Reveal.js Overrides --- */
+
+.reveal,
+.reveal .slide-background {
+  background-color: var(--color-bg);
+}
+
+.reveal {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(167, 139, 250, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 90% 90%, rgba(244, 114, 182, 0.04) 0%, transparent 60%),
+    var(--color-bg);
+  height: 100%;
+  padding: 0;
+}
+
+/* --- Typography --- */
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--font-sans);
+  color: var(--color-text-bright);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--spacing-md) 0;
+  text-transform: none;
+  text-shadow: none;
+}
+
+.reveal h1 {
+  font-size: var(--font-size-xxl);
+}
+
+.reveal h2 {
+  font-size: var(--font-size-xl);
+}
+
+.reveal h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.reveal p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.reveal strong {
+  color: var(--color-text-bright);
+  font-weight: 700;
+}
+
+.reveal em {
+  font-style: normal;
+  color: var(--color-cyan);
+}
+
+/* --- Gradient Text — the signature effect --- */
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-hot {
+  background: var(--gradient-hot);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-electric {
+  background: var(--gradient-electric);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-sunset {
+  background: var(--gradient-sunset);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Glow effects — subtle neon vibe --- */
+
+.glow-cyan {
+  text-shadow: 0 0 40px rgba(34, 211, 238, 0.3);
+}
+
+.glow-violet {
+  text-shadow: 0 0 40px rgba(167, 139, 250, 0.3);
+}
+
+.glow-pink {
+  text-shadow: 0 0 40px rgba(244, 114, 182, 0.3);
+}
+
+/* --- Monospace / Code --- */
+
+.reveal code,
+.reveal .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--color-cyan);
+}
+
+.reveal pre {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.05);
+  width: auto;
+}
+
+.reveal pre code {
+  font-size: inherit;
+  color: var(--color-text);
+  padding: 0;
+  background: none;
+}
+
+/* --- Accent line — gradient border accent --- */
+
+.accent-line {
+  height: 3px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 2px;
+  margin: var(--spacing-md) 0;
+  width: 120px;
+}
+
+/* --- Accent card — elevated surface with glow border --- */
+
+.accent-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: var(--spacing-md);
+  box-shadow: 0 0 40px rgba(167, 139, 250, 0.06);
+}
+
+/* --- Slide Content Wrapper --- */
+
+.slide-content {
+  padding: var(--slide-padding);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* --- Lists --- */
+
+.reveal ul,
+.reveal ol {
+  font-size: var(--font-size-md);
+  line-height: 1.8;
+  margin: 0 0 var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+}
+
+.reveal li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.reveal li::marker {
+  color: var(--color-violet);
+}
+
+/* --- Fragments --- */
+
+.reveal .fragment {
+  transition: opacity var(--duration-normal) ease-out,
+              transform var(--duration-normal) ease-out;
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Utility Classes --- */
+
+.text-cyan { color: var(--color-cyan); }
+.text-violet { color: var(--color-violet); }
+.text-pink { color: var(--color-pink); }
+.text-green { color: var(--color-green); }
+.text-orange { color: var(--color-orange); }
+.text-muted { color: var(--color-muted); }
+.text-bright { color: var(--color-text-bright); }
+
+.text-mono { font-family: var(--font-mono); }
+.text-xxl { font-size: var(--font-size-xxl); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-md { font-size: var(--font-size-md); }
+.text-sm { font-size: var(--font-size-sm); }
+
+.text-center { text-align: center; }
+
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
