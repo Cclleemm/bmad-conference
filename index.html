@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>conf-bmad — DevOps Meetup Geneva</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reset.css">
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="/css/theme.css">
@@ -42,7 +45,7 @@
             <p class="text-lg text-muted">Industrialiser le dev assisté par IA</p>
             <div class="tag-row mt-lg">
               <span class="tag tag-cyan">Clément Raussin</span>
-              <span class="tag tag-violet">Qim Info</span>
+              <span class="tag tag-violet">Qim info</span>
               <span class="tag tag-green">Cloud &amp; DevOps</span>
             </div>
           </div>
@@ -73,19 +76,24 @@
             <div class="accent-line"></div>
             <div class="keyword-stack mt-md">
               <span class="keyword kw-cyan">Dev millennial · Années 90</span>
-              <span class="keyword kw-violet">Centre d'expertise Qim Info</span>
+              <span class="keyword kw-violet">Centre d'expertise Qim info</span>
               <span class="keyword kw-green">Head Of Cloud &amp; DevOps</span>
             </div>
-            <p class="text-muted text-sm mt-lg">Réconcilier l'ingénierie et l'IA.</p>
           </div>
           <div class="split-deco">
-            <svg viewBox="0 0 300 300" class="deco-hex">
-              <polygon points="150,10 280,80 280,220 150,290 20,220 20,80" fill="none" stroke="url(#g-cv)" stroke-width="1.5" opacity="0.3"/>
-              <polygon points="150,40 250,95 250,205 150,260 50,205 50,95" fill="none" stroke="url(#g-cv)" stroke-width="1" opacity="0.15"/>
-              <polygon points="150,70 220,110 220,190 150,230 80,190 80,110" fill="none" stroke="url(#g-cv)" stroke-width="0.5" opacity="0.08"/>
-            </svg>
+            <div class="whoami-photo-wrap">
+              <div class="whoami-photo-glow"></div>
+              <div class="polaroid">
+                <img src="/assets/clem.jpeg" alt="Clément enfant" class="whoami-photo" />
+                <span class="polaroid-caption">~ 1996</span>
+              </div>
+              <span class="photo-sticker sticker-1">👾</span>
+              <span class="photo-sticker sticker-2">⌨️</span>
+              <span class="photo-sticker sticker-3">🚀</span>
+            </div>
           </div>
         </div>
+        <p class="whoami-tagline fragment">Mon défi : amener le <span class="text-cyan">Vibe Coding</span> et le <span class="text-cyan">Dev par l'IA</span> dans les bonnes pratiques <span class="gradient-text">DevSecOps</span>.</p>
       </section>
 
       <!-- ========== 4. LA RÉALITÉ ========== -->
@@ -112,32 +120,7 @@
         </div>
       </section>
 
-      <!-- ========== 5. LES 4 FLÉAUX ========== -->
-      <section class="slide-plagues" data-transition="slide">
-        <div class="slide-content">
-          <h2 class="text-center">Les <span class="text-pink">4 fléaux</span></h2>
-          <div class="plagues-grid mt-lg">
-            <div class="plague-card">
-              <div class="plague-icon">🌪️</div>
-              <h3>Context<br>Death Spiral</h3>
-            </div>
-            <div class="plague-card">
-              <div class="plague-icon">🎭</div>
-              <h3>Consistency<br>Crisis</h3>
-            </div>
-            <div class="plague-card">
-              <div class="plague-icon">📚</div>
-              <h3>Documentation<br>Debt</h3>
-            </div>
-            <div class="plague-card">
-              <div class="plague-icon">🎲</div>
-              <h3>Quality<br>Roulette</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== 6. L'ÉCHELLE ========== -->
+      <!-- ========== 5. L'ÉCHELLE ========== -->
       <section class="slide-scale" data-transition="slide">
         <div class="layout-versus">
           <div class="versus-side">
@@ -161,6 +144,31 @@
               <span class="tag tag-muted">Enterprise</span>
               <span class="tag tag-muted">Collaboration</span>
               <span class="tag tag-muted">Scale</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 6. LES 4 FLÉAUX ========== -->
+      <section class="slide-plagues" data-transition="slide">
+        <div class="slide-content">
+          <h2 class="text-center">Les <span class="text-pink">4 fléaux</span></h2>
+          <div class="plagues-grid mt-lg">
+            <div class="plague-card">
+              <div class="plague-icon">🌪️</div>
+              <h3>Context<br>Death Spiral</h3>
+            </div>
+            <div class="plague-card">
+              <div class="plague-icon">🎭</div>
+              <h3>Consistency<br>Crisis</h3>
+            </div>
+            <div class="plague-card">
+              <div class="plague-icon">📚</div>
+              <h3>Documentation<br>Debt</h3>
+            </div>
+            <div class="plague-card">
+              <div class="plague-icon">🎲</div>
+              <h3>Quality<br>Roulette</h3>
             </div>
           </div>
         </div>
@@ -1060,58 +1068,7 @@
         </div>
       </section>
 
-      <!-- ========== 21. BMAD TAKEAWAY KIT ========== -->
-      <section class="slide-takeaway" data-transition="slide">
-        <div class="slide-content">
-          <h2 class="text-center"><span class="gradient-electric">Takeaway Kit</span></h2>
-          <div class="takeaway-grid mt-lg">
-            <div class="takeaway-card tk-cyan">
-              <div class="tk-num">01</div>
-              <div class="tk-content">
-                <div class="tk-cmd">/product-brief d'abord</div>
-                <div class="tk-desc">Posez la vision avant d'écrire une ligne de code</div>
-              </div>
-            </div>
-            <div class="takeaway-card tk-violet">
-              <div class="tk-num">02</div>
-              <div class="tk-content">
-                <div class="tk-cmd">Pas de code sans story</div>
-                <div class="tk-desc">Chaque ligne tracée, chaque décision justifiée</div>
-              </div>
-            </div>
-            <div class="takeaway-card tk-green">
-              <div class="tk-num">03</div>
-              <div class="tk-content">
-                <div class="tk-cmd">Specs vivantes</div>
-                <div class="tk-desc">La doc évolue avec le projet — jamais figée</div>
-              </div>
-            </div>
-            <div class="takeaway-card tk-pink">
-              <div class="tk-num">04</div>
-              <div class="tk-content">
-                <div class="tk-cmd">Le « afin de » guide tout</div>
-                <div class="tk-desc">L'intention utilisateur survit aux outils</div>
-              </div>
-            </div>
-            <div class="takeaway-card tk-cyan2">
-              <div class="tk-num">05</div>
-              <div class="tk-content">
-                <div class="tk-cmd">/workflow-status souvent</div>
-                <div class="tk-desc">Votre GPS de projet — pour l'IA et l'humain</div>
-              </div>
-            </div>
-            <div class="takeaway-card tk-orange">
-              <div class="tk-num">06</div>
-              <div class="tk-content">
-                <div class="tk-cmd">Critiquez, adaptez</div>
-                <div class="tk-desc">Un cadre, pas un dogme. Prenez ce qui marche.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========== 22. ÉCRIVONS LE LIVRE ========== -->
+      <!-- ========== 21. ÉCRIVONS LE LIVRE ========== -->
       <section class="slide-write-book" data-transition="fade">
         <div class="slide-content text-center">
           <!-- Atmospheric glow orbs -->
@@ -1153,23 +1110,53 @@
           <div class="accent-line accent-line-center mt-md"></div>
           <p class="text-md text-muted mt-lg fragment" data-fragment-index="0">Des questions ?</p>
           <div class="thanks-boom fragment" data-fragment-index="1">
+            <!-- Multi-color flash layers -->
             <div class="boom-flash"></div>
+            <div class="boom-flash boom-flash-cyan"></div>
+            <div class="boom-flash boom-flash-pink"></div>
+            <!-- Expanding neon rings -->
+            <div class="neon-ring nr-1"></div>
+            <div class="neon-ring nr-2"></div>
+            <div class="neon-ring nr-3"></div>
+            <!-- Main confetti burst — 24 pieces -->
             <div class="confetti-burst">
               <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
               <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
               <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
               <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+              <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+              <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
             </div>
-            <p class="thanks-spoiler text-sm">Je réponds déjà à la première :<br><span class="text-cyan">Oui</span>, cette présentation a été créée en vibe codant avec BMAD.</p>
+            <!-- Second wave confetti — 12 pieces, delayed -->
+            <div class="confetti-burst confetti-wave-2">
+              <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+              <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+              <span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span>
+            </div>
+            <!-- Edge glow overlay -->
+            <div class="boom-edge-glow"></div>
+            <!-- Text with massive OUI -->
+            <p class="thanks-spoiler">Je réponds déjà à la première :</p>
+            <p class="boom-oui-wrap"><span class="boom-oui">Oui</span></p>
+            <p class="thanks-spoiler thanks-spoiler-2">cette présentation a été créée<br>en vibe codant avec <span class="text-violet">BMAD</span>.</p>
           </div>
           <p class="text-sm text-muted fragment" data-fragment-index="2"><em>D'autres ?</em></p>
-          <div class="tag-row mt-lg">
-            <span class="tag tag-cyan">Clément Raussin</span>
-            <span class="tag tag-violet">Qim Info</span>
-          </div>
-          <div class="tag-row mt-sm">
-            <span class="tag tag-muted">buildmode.dev</span>
-            <span class="tag tag-muted">github.com/bmad-code-org/BMAD-METHOD</span>
+          <div class="thanks-footer mt-lg">
+            <div class="qr-block">
+              <div class="qr-glow"></div>
+              <div class="qr-frame">
+                <img src="/assets/images/qr-linkedin.svg" alt="LinkedIn QR" class="qr-img" />
+              </div>
+              <span class="qr-label">Connectons-nous</span>
+            </div>
+            <div class="thanks-links">
+              <span class="thanks-name">Clément Raussin</span>
+              <span class="thanks-company">Qim info</span>
+              <div class="tag-row mt-sm">
+                <span class="tag tag-muted">buildmode.dev</span>
+                <span class="tag tag-muted">github.com/bmad-code-org/BMAD-METHOD</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

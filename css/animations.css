@@ -57,6 +57,65 @@
   50% { opacity: 0; }
 }
 
+/* --- Punchy New Keyframes --- */
+
+@keyframes blurReveal {
+  from { opacity: 0; filter: blur(18px); transform: scale(1.08); }
+  to { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+@keyframes swooshUp {
+  0% { opacity: 0; transform: translateY(80px) scale(0.92); }
+  60% { opacity: 1; transform: translateY(-10px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes popBounce {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.15); }
+  70% { transform: scale(0.93); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes elasticScale {
+  0% { opacity: 0; transform: scale(0.3); }
+  40% { opacity: 1; transform: scale(1.12); }
+  60% { transform: scale(0.92); }
+  80% { transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flipInX {
+  from { opacity: 0; transform: perspective(800px) rotateX(-80deg); }
+  60% { opacity: 1; transform: perspective(800px) rotateX(10deg); }
+  to { opacity: 1; transform: perspective(800px) rotateX(0); }
+}
+
+@keyframes rotateSlideIn {
+  from { opacity: 0; transform: translateX(-60px) rotate(-8deg); }
+  to { opacity: 1; transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes dropIn {
+  0% { opacity: 0; transform: translateY(-60px) scale(0.8); }
+  60% { opacity: 1; transform: translateY(8px) scale(1.03); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes polaroidDrop {
+  0% { opacity: 0; transform: rotate(8deg) translateY(-120px) scale(0.6); }
+  50% { opacity: 1; transform: rotate(-5deg) translateY(10px) scale(1.05); }
+  75% { transform: rotate(-2deg) translateY(-5px) scale(0.98); }
+  100% { opacity: 1; transform: rotate(-3deg) translateY(0) scale(1); }
+}
+
+@keyframes stickerPop {
+  0% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.4) rotate(-10deg); }
+  75% { transform: scale(0.9) rotate(5deg); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
 /* --- 1. Title Slide — staggered fade up --- */
 
 .slide-title.present .deco-corners::before,
@@ -65,7 +124,7 @@
 }
 
 .slide-title.present h1 {
-  animation: fadeUp 600ms ease-out 100ms both;
+  animation: blurReveal 800ms ease-out 100ms both;
 }
 
 .slide-title.present .accent-line {
@@ -78,7 +137,7 @@
 }
 
 .slide-title.present .tag-row {
-  animation: fadeUp 500ms ease-out 650ms both;
+  animation: swooshUp 600ms ease-out 650ms both;
 }
 
 /* --- 2. Shock Slide — impact scale + ring --- */
@@ -88,7 +147,7 @@
 }
 
 .slide-shock.present h2 {
-  animation: scaleIn 700ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+  animation: elasticScale 900ms ease-out 200ms both;
 }
 
 .slide-shock.present .deco-poop {
@@ -98,7 +157,7 @@
 /* --- 3. Whoami Slide — left content + right deco --- */
 
 .slide-whoami.present .split-main h2 {
-  animation: slideFromLeft 500ms ease-out both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-whoami.present .accent-line {
@@ -107,61 +166,75 @@
 }
 
 .slide-whoami.present .keyword {
-  animation: slideFromLeft 400ms ease-out both;
+  animation: rotateSlideIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .slide-whoami.present .keyword:nth-child(1) { animation-delay: 300ms; }
-.slide-whoami.present .keyword:nth-child(2) { animation-delay: 450ms; }
-.slide-whoami.present .keyword:nth-child(3) { animation-delay: 600ms; }
+.slide-whoami.present .keyword:nth-child(2) { animation-delay: 480ms; }
+.slide-whoami.present .keyword:nth-child(3) { animation-delay: 660ms; }
 
-.slide-whoami.present .split-main p {
-  animation: fadeIn 400ms ease-out 750ms both;
+.slide-whoami.present .whoami-tagline.visible {
+  animation: swooshUp 600ms ease-out both;
 }
 
-.slide-whoami.present .deco-hex {
-  animation: fadeIn 1200ms ease-out 200ms both;
+.slide-whoami.present .polaroid {
+  animation: polaroidDrop 800ms cubic-bezier(0.34, 1.56, 0.64, 1) 300ms both;
+}
+
+.slide-whoami.present .whoami-photo-glow {
+  animation: qrGlowPulse 3s ease-in-out 1s infinite;
+}
+
+.slide-whoami.present .sticker-1 {
+  animation: stickerPop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 900ms both;
+}
+.slide-whoami.present .sticker-2 {
+  animation: stickerPop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 1100ms both;
+}
+.slide-whoami.present .sticker-3 {
+  animation: stickerPop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 1300ms both;
 }
 
 /* --- 4. Reality Slide — before/arrow/after sequence --- */
 
 .slide-reality.present .reality-before {
-  animation: slideFromLeft 500ms ease-out 100ms both;
+  animation: fadeUp 500ms ease-out 100ms both;
 }
 
 .slide-reality.present .reality-arrow {
-  animation: fadeIn 400ms ease-out 500ms both;
+  animation: elasticScale 600ms ease-out 500ms both;
 }
 
 .slide-reality.present .reality-after {
-  animation: slideFromRight 500ms ease-out 700ms both;
+  animation: blurReveal 700ms ease-out 700ms both;
 }
 
 /* --- 5. Plagues Slide — staggered card pop --- */
 
 .slide-plagues.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-plagues.present .plague-card {
-  animation: scaleIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: popBounce 600ms ease-out both;
 }
 
 .slide-plagues.present .plague-card:nth-child(1) { animation-delay: 200ms; }
-.slide-plagues.present .plague-card:nth-child(2) { animation-delay: 350ms; }
-.slide-plagues.present .plague-card:nth-child(3) { animation-delay: 500ms; }
-.slide-plagues.present .plague-card:nth-child(4) { animation-delay: 650ms; }
+.slide-plagues.present .plague-card:nth-child(2) { animation-delay: 380ms; }
+.slide-plagues.present .plague-card:nth-child(3) { animation-delay: 560ms; }
+.slide-plagues.present .plague-card:nth-child(4) { animation-delay: 740ms; }
 
 /* --- 6. Scale Slide — sides slide in from edges --- */
 
 .slide-scale.present .versus-side:first-child {
-  animation: slideFromLeft 600ms ease-out 100ms both;
+  animation: swooshUp 700ms ease-out 100ms both;
 }
 
 .slide-scale.present .versus-divider {
-  animation: fadeIn 500ms ease-out 400ms both;
+  animation: blurReveal 500ms ease-out 500ms both;
 }
 
 .slide-scale.present .versus-side:last-child {
-  animation: slideFromRight 600ms ease-out 100ms both;
+  animation: swooshUp 700ms ease-out 300ms both;
 }
 
 /* --- 7. Question Slide — lines extend, text reveals --- */
@@ -172,7 +245,7 @@
 }
 
 .slide-question.present h2 {
-  animation: fadeIn 600ms ease-out 400ms both;
+  animation: blurReveal 900ms ease-out 400ms both;
 }
 
 .slide-question.present .gradient-text {
@@ -189,33 +262,33 @@
 /* --- 8. BMAD Slide — title + pillars stagger --- */
 
 .slide-bmad.present h2 {
-  animation: scaleIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: elasticScale 800ms ease-out both;
 }
 
 .slide-bmad.present p:first-of-type {
-  animation: fadeIn 400ms ease-out 200ms both;
+  animation: fadeIn 400ms ease-out 300ms both;
 }
 
 .slide-bmad.present .pillar {
-  animation: fadeUp 500ms ease-out both;
+  animation: dropIn 600ms ease-out both;
 }
 
 .slide-bmad.present .pillar:nth-child(1) { animation-delay: 400ms; }
-.slide-bmad.present .pillar:nth-child(2) { animation-delay: 550ms; }
-.slide-bmad.present .pillar:nth-child(3) { animation-delay: 700ms; }
+.slide-bmad.present .pillar:nth-child(2) { animation-delay: 600ms; }
+.slide-bmad.present .pillar:nth-child(3) { animation-delay: 800ms; }
 
 .slide-bmad.present .tag-row {
-  animation: fadeIn 400ms ease-out 900ms both;
+  animation: swooshUp 500ms ease-out 1000ms both;
 }
 
 /* --- 9. Agents Slide — cards stagger in --- */
 
 .slide-agents.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-agents.present .agent-card {
-  animation: scaleIn 350ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: popBounce 500ms ease-out both;
 }
 
 .slide-agents.present .agent-card:nth-child(1) { animation-delay: 150ms; }
@@ -231,17 +304,17 @@
 /* --- 10. Workflow Slide — phases cascade left to right --- */
 
 .slide-workflow.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: blurReveal 600ms ease-out both;
 }
 
 .slide-workflow.present .wf-phase {
-  animation: scaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: flipInX 600ms ease-out both;
 }
 
-.slide-workflow.present .wf-phase:nth-child(1) { animation-delay: 200ms; }
-.slide-workflow.present .wf-phase:nth-child(2) { animation-delay: 500ms; }
-.slide-workflow.present .wf-phase:nth-child(3) { animation-delay: 800ms; }
-.slide-workflow.present .wf-phase:nth-child(4) { animation-delay: 1100ms; }
+.slide-workflow.present .wf-phase:nth-of-type(1) { animation-delay: 200ms; }
+.slide-workflow.present .wf-phase:nth-of-type(2) { animation-delay: 500ms; }
+.slide-workflow.present .wf-phase:nth-of-type(3) { animation-delay: 800ms; }
+.slide-workflow.present .wf-phase:nth-of-type(4) { animation-delay: 1100ms; }
 
 .slide-workflow.present .wf-arrow {
   animation: fadeIn 300ms ease-out both;
@@ -251,54 +324,10 @@
 .slide-workflow.present .wf-arrow:nth-of-type(2) { animation-delay: 700ms; }
 .slide-workflow.present .wf-arrow:nth-of-type(3) { animation-delay: 1000ms; }
 
-/* --- 10. Gains Slide — numbers pop in staggered --- */
-
-.slide-gains.present h2 {
-  animation: fadeUp 500ms ease-out both;
-}
-
-.slide-gains.present .gain-block {
-  animation: scaleIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-
-.slide-gains.present .gain-block:nth-child(1) { animation-delay: 200ms; }
-.slide-gains.present .gain-block:nth-child(2) { animation-delay: 400ms; }
-.slide-gains.present .gain-block:nth-child(3) { animation-delay: 600ms; }
-.slide-gains.present .gain-block:nth-child(4) { animation-delay: 800ms; }
-
-/* --- 10. Limits Slide — blocks fade up staggered --- */
-
-.slide-limits.present h2 {
-  animation: fadeUp 500ms ease-out both;
-}
-
-.slide-limits.present .limit-block {
-  animation: fadeUp 400ms ease-out both;
-}
-
-.slide-limits.present .limit-block:nth-child(1) { animation-delay: 200ms; }
-.slide-limits.present .limit-block:nth-child(2) { animation-delay: 350ms; }
-.slide-limits.present .limit-block:nth-child(3) { animation-delay: 500ms; }
-.slide-limits.present .limit-block:nth-child(4) { animation-delay: 650ms; }
-
-.slide-limits.present > .slide-content > p {
-  animation: fadeIn 400ms ease-out 850ms both;
-}
-
-/* --- 11. Book Slide — slow dramatic entrance --- */
-
-.slide-book.present h2 {
-  animation: fadeUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.slide-book.present p {
-  animation: fadeIn 800ms ease-out 600ms both;
-}
-
-/* --- 12. Demo Slide — terminal slides up + cursor blink --- */
+/* --- Demo Slide — terminal slides up + cursor blink --- */
 
 .slide-demo.present .terminal-frame {
-  animation: fadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: swooshUp 700ms ease-out both;
 }
 
 .slide-demo.present .terminal-body .text-mono::after {
@@ -317,7 +346,7 @@
 
 .slide-install.present .terminal-frame,
 .slide-wf-init.present .terminal-frame {
-  animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-install .terminal-body .fragment,
@@ -331,7 +360,7 @@
 }
 
 .slide-pb.present .terminal-frame {
-  animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-pb .terminal-body .fragment {
@@ -355,7 +384,7 @@
 }
 
 .slide-roadmap.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-roadmap.present h2 + p {
@@ -363,7 +392,7 @@
 }
 
 .slide-roadmap.present .roadmap-step {
-  animation: scaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: popBounce 500ms ease-out both;
 }
 
 .slide-roadmap.present .roadmap-step:nth-of-type(1) { animation-delay: 300ms; }
@@ -395,7 +424,7 @@
 /* --- 17. Workflow Status Slide — terminal fragment reveal --- */
 
 .slide-wf-status.present .terminal-frame {
-  animation: fadeUp 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-wf-status .terminal-body .fragment {
@@ -409,7 +438,7 @@
 /* --- 18. Artifacts Slide — tree + desc stagger --- */
 
 .slide-artifacts.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: blurReveal 600ms ease-out both;
 }
 
 .slide-artifacts.present h2 + p {
@@ -417,11 +446,11 @@
 }
 
 .slide-artifacts.present .artifacts-tree {
-  animation: slideFromLeft 500ms ease-out 300ms both;
+  animation: swooshUp 600ms ease-out 300ms both;
 }
 
 .slide-artifacts.present .artifact-block {
-  animation: slideFromRight 400ms ease-out both;
+  animation: rotateSlideIn 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .slide-artifacts.present .artifact-block:nth-child(1) { animation-delay: 500ms; }
@@ -434,11 +463,11 @@
 /* --- 19. Doc Preview Slide — cards stagger in --- */
 
 .slide-doc-preview.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: swooshUp 600ms ease-out both;
 }
 
 .slide-doc-preview.present .doc-card {
-  animation: fadeUp 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: flipInX 600ms ease-out both;
 }
 
 .slide-doc-preview.present .doc-card:nth-child(1) { animation-delay: 200ms; }
@@ -451,21 +480,21 @@
 /* --- 20. Verdict Slide — title + blocks stagger --- */
 
 .slide-verdict.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: blurReveal 700ms ease-out both;
 }
 
 .slide-verdict.present .verdict-label {
-  animation: fadeIn 400ms ease-out 200ms both;
+  animation: swooshUp 500ms ease-out 200ms both;
 }
 
 /* --- 21. Takeaway Slide — cards stagger in --- */
 
 .slide-takeaway.present h2 {
-  animation: fadeUp 500ms ease-out both;
+  animation: elasticScale 700ms ease-out both;
 }
 
 .slide-takeaway.present .takeaway-card {
-  animation: scaleIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: dropIn 550ms ease-out both;
 }
 
 .slide-takeaway.present .takeaway-card:nth-child(1) { animation-delay: 200ms; }
@@ -526,12 +555,12 @@
 
 /* Fragment 0: Intro — slow poetic rise */
 .slide-write-book .wb-intro.fragment.visible {
-  animation: fadeUp 1000ms ease-out both;
+  animation: swooshUp 900ms ease-out both;
 }
 
-/* Fragment 1: Vision — dramatic scale with spring */
+/* Fragment 1: Vision — dramatic blur reveal */
 .slide-write-book .wb-vision.fragment.visible {
-  animation: scaleIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: blurReveal 1000ms ease-out both;
 }
 
 /* Vision gradient loops */
@@ -554,9 +583,9 @@
   animation: badgePulse 2.5s ease-in-out infinite;
 }
 
-/* Fragment 3: FINALE — massive scale-in with glow */
+/* Fragment 3: FINALE — massive elastic entrance with glow */
 .slide-write-book .wb-finale-wrap.fragment.visible {
-  animation: scaleInBig 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: elasticScale 1100ms ease-out both;
 }
 
 .slide-write-book .wb-finale-wrap.fragment.visible .wb-finale-line {
@@ -575,30 +604,109 @@
   animation-delay: 1500ms;
 }
 
-/* --- 23. Thanks Slide — gentle scale in + confetti burst --- */
+/* --- 22. Thanks Slide — EXPLOSIVE reveal --- */
 
+/* --- Confetti keyframes --- */
 @keyframes confettiFly {
   0%   { transform: translateY(0) rotate(0deg) scale(0); opacity: 1; }
-  8%   { transform: translateY(-20px) rotate(60deg) scale(1); opacity: 1; }
-  70%  { opacity: 0.8; }
-  100% { transform: translateY(-420px) rotate(780deg) scale(0.2); opacity: 0; }
+  8%   { transform: translateY(-30px) rotate(80deg) scale(1); opacity: 1; }
+  60%  { opacity: 0.9; }
+  100% { transform: translateY(-550px) rotate(900deg) scale(0.15); opacity: 0; }
 }
 
 @keyframes confettiFlySoft {
   0%   { transform: translateY(0) rotate(0deg) scale(0); opacity: 1; }
-  10%  { transform: translateY(-15px) rotate(45deg) scale(1); opacity: 1; }
-  65%  { opacity: 0.7; }
-  100% { transform: translateY(-280px) rotate(540deg) scale(0.3); opacity: 0; }
+  10%  { transform: translateY(-20px) rotate(50deg) scale(1); opacity: 1; }
+  55%  { opacity: 0.8; }
+  100% { transform: translateY(-380px) rotate(650deg) scale(0.25); opacity: 0; }
 }
 
+/* Second wave — slower, longer arc */
+@keyframes confettiFlyWave2 {
+  0%   { transform: translateY(0) rotate(0deg) scale(0); opacity: 1; }
+  12%  { transform: translateY(-25px) rotate(40deg) scale(1.2); opacity: 1; }
+  50%  { opacity: 0.9; }
+  100% { transform: translateY(-480px) rotate(720deg) scale(0.1); opacity: 0; }
+}
+
+@keyframes confettiFlyWave2Soft {
+  0%   { transform: translateY(0) rotate(0deg) scale(0); opacity: 1; }
+  15%  { transform: translateY(-18px) rotate(30deg) scale(1.1); opacity: 1; }
+  45%  { opacity: 0.8; }
+  100% { transform: translateY(-350px) rotate(540deg) scale(0.2); opacity: 0; }
+}
+
+/* --- Flash keyframes --- */
 @keyframes flashBurst {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+  15%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
+}
+
+@keyframes flashBurstCyan {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
-  12%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  20%  { opacity: 0.9; transform: translate(-50%, -50%) scale(1.2); }
   100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
 }
 
+@keyframes flashBurstPink {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.1); }
+  10%  { opacity: 0.7; transform: translate(-50%, -50%) scale(0.8); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(3); }
+}
+
+/* --- Neon rings --- */
+@keyframes neonRingExpand {
+  0%   { opacity: 0.9; transform: translate(-50%, -50%) scale(0); }
+  40%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(6); }
+}
+
+/* --- Edge glow --- */
+@keyframes edgeGlowPulse {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  40%  { opacity: 0.6; }
+  60%  { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+/* --- Screen shake --- */
+@keyframes screenShake {
+  0%, 100% { transform: translate(0, 0); }
+  8%  { transform: translate(-10px, 5px); }
+  16% { transform: translate(8px, -8px); }
+  24% { transform: translate(-6px, 10px); }
+  32% { transform: translate(10px, -4px); }
+  40% { transform: translate(-8px, -6px); }
+  48% { transform: translate(6px, 8px); }
+  56% { transform: translate(-4px, -10px); }
+  64% { transform: translate(8px, 4px); }
+  72% { transform: translate(-6px, 6px); }
+  80% { transform: translate(4px, -4px); }
+  88% { transform: translate(-2px, 2px); }
+}
+
+/* --- OUI entrance --- */
+@keyframes ouiExplode {
+  0%   { opacity: 0; transform: scale(0); filter: blur(30px); }
+  25%  { opacity: 1; transform: scale(1.6); filter: blur(0); }
+  40%  { transform: scale(0.85); }
+  55%  { transform: scale(1.2); }
+  70%  { transform: scale(0.95); }
+  85%  { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ouiGlow {
+  0%, 100% { filter: drop-shadow(0 0 40px rgba(34, 211, 238, 0.5)) drop-shadow(0 0 80px rgba(52, 211, 153, 0.3)); }
+  50%      { filter: drop-shadow(0 0 60px rgba(34, 211, 238, 0.8)) drop-shadow(0 0 120px rgba(52, 211, 153, 0.5)) drop-shadow(0 0 200px rgba(167, 139, 250, 0.3)); }
+}
+
+/* === THANKS SLIDE ANIMATIONS === */
+
 .slide-thanks.present h2 {
-  animation: scaleIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: elasticScale 800ms ease-out both;
 }
 
 .slide-thanks.present .accent-line {
@@ -606,53 +714,136 @@
   transform-origin: center;
 }
 
-/* Boom fragment — instant reveal, let children animate */
+/* Boom fragment — instant reveal */
 .slide-thanks .thanks-boom.fragment {
   transition: none;
 }
 
-/* Flash */
+/* Screen shake on the whole slide content */
+.slide-thanks:has(.thanks-boom.visible) .slide-content {
+  animation: screenShake 600ms ease-out both;
+}
+
+/* Multi-layer flash */
 .thanks-boom.fragment.visible .boom-flash {
-  animation: flashBurst 1.2s ease-out both;
+  animation: flashBurst 1.4s ease-out both;
 }
 
-/* Confetti pieces — long burst */
-.thanks-boom.fragment.visible .confetti-burst span:nth-child(odd) i {
-  animation: confettiFly 1.3s cubic-bezier(0.2, 0.6, 0.4, 1) both;
+.thanks-boom.fragment.visible .boom-flash-cyan {
+  animation: flashBurstCyan 1s ease-out 50ms both;
 }
 
-/* Confetti pieces — soft burst */
-.thanks-boom.fragment.visible .confetti-burst span:nth-child(even) i {
-  animation: confettiFlySoft 1.6s cubic-bezier(0.2, 0.6, 0.4, 1) both;
+.thanks-boom.fragment.visible .boom-flash-pink {
+  animation: flashBurstPink 1.8s ease-out 100ms both;
 }
 
-/* Staggered delays */
-.confetti-burst span:nth-child(1)  i { animation-delay:   0ms !important; }
-.confetti-burst span:nth-child(2)  i { animation-delay:  40ms !important; }
-.confetti-burst span:nth-child(3)  i { animation-delay:  80ms !important; }
-.confetti-burst span:nth-child(4)  i { animation-delay:  20ms !important; }
-.confetti-burst span:nth-child(5)  i { animation-delay:  60ms !important; }
-.confetti-burst span:nth-child(6)  i { animation-delay: 100ms !important; }
-.confetti-burst span:nth-child(7)  i { animation-delay:  30ms !important; }
-.confetti-burst span:nth-child(8)  i { animation-delay:  70ms !important; }
-.confetti-burst span:nth-child(9)  i { animation-delay:  50ms !important; }
-.confetti-burst span:nth-child(10) i { animation-delay:  90ms !important; }
-.confetti-burst span:nth-child(11) i { animation-delay:  10ms !important; }
-.confetti-burst span:nth-child(12) i { animation-delay: 110ms !important; }
-.confetti-burst span:nth-child(13) i { animation-delay:  45ms !important; }
-.confetti-burst span:nth-child(14) i { animation-delay:  85ms !important; }
-.confetti-burst span:nth-child(15) i { animation-delay:  25ms !important; }
-.confetti-burst span:nth-child(16) i { animation-delay:  65ms !important; }
+/* Neon rings — staggered expansion */
+.thanks-boom.fragment.visible .nr-1 {
+  animation: neonRingExpand 1.2s ease-out both;
+}
 
-/* Text appears after the burst */
+.thanks-boom.fragment.visible .nr-2 {
+  animation: neonRingExpand 1.4s ease-out 150ms both;
+}
+
+.thanks-boom.fragment.visible .nr-3 {
+  animation: neonRingExpand 1.6s ease-out 300ms both;
+}
+
+/* Edge glow */
+.thanks-boom.fragment.visible .boom-edge-glow {
+  animation: edgeGlowPulse 1.5s ease-out both;
+}
+
+/* === CONFETTI WAVE 1 — fast, far === */
+.thanks-boom.fragment.visible .confetti-burst:not(.confetti-wave-2) span:nth-child(odd) i {
+  animation: confettiFly 1.5s cubic-bezier(0.15, 0.6, 0.35, 1) both;
+}
+
+.thanks-boom.fragment.visible .confetti-burst:not(.confetti-wave-2) span:nth-child(even) i {
+  animation: confettiFlySoft 1.8s cubic-bezier(0.15, 0.6, 0.35, 1) both;
+}
+
+/* Wave 1 staggered delays — 24 pieces */
+.confetti-burst:not(.confetti-wave-2) span:nth-child(1)  i { animation-delay:   0ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(2)  i { animation-delay:  30ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(3)  i { animation-delay:  60ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(4)  i { animation-delay:  15ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(5)  i { animation-delay:  45ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(6)  i { animation-delay:  80ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(7)  i { animation-delay:  20ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(8)  i { animation-delay:  55ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(9)  i { animation-delay:  35ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(10) i { animation-delay:  70ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(11) i { animation-delay:  10ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(12) i { animation-delay:  90ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(13) i { animation-delay:  40ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(14) i { animation-delay:  65ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(15) i { animation-delay:  25ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(16) i { animation-delay:  50ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(17) i { animation-delay:  75ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(18) i { animation-delay:   5ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(19) i { animation-delay:  85ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(20) i { animation-delay:  42ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(21) i { animation-delay:  18ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(22) i { animation-delay:  58ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(23) i { animation-delay:  32ms !important; }
+.confetti-burst:not(.confetti-wave-2) span:nth-child(24) i { animation-delay:  72ms !important; }
+
+/* === CONFETTI WAVE 2 — delayed, different arc === */
+.thanks-boom.fragment.visible .confetti-wave-2 span:nth-child(odd) i {
+  animation: confettiFlyWave2 1.8s cubic-bezier(0.1, 0.7, 0.3, 1) both;
+}
+
+.thanks-boom.fragment.visible .confetti-wave-2 span:nth-child(even) i {
+  animation: confettiFlyWave2Soft 2s cubic-bezier(0.1, 0.7, 0.3, 1) both;
+}
+
+/* Wave 2 delays — 12 pieces, all delayed 200ms+ */
+.confetti-wave-2 span:nth-child(1)  i { animation-delay: 200ms !important; }
+.confetti-wave-2 span:nth-child(2)  i { animation-delay: 240ms !important; }
+.confetti-wave-2 span:nth-child(3)  i { animation-delay: 280ms !important; }
+.confetti-wave-2 span:nth-child(4)  i { animation-delay: 220ms !important; }
+.confetti-wave-2 span:nth-child(5)  i { animation-delay: 260ms !important; }
+.confetti-wave-2 span:nth-child(6)  i { animation-delay: 300ms !important; }
+.confetti-wave-2 span:nth-child(7)  i { animation-delay: 210ms !important; }
+.confetti-wave-2 span:nth-child(8)  i { animation-delay: 250ms !important; }
+.confetti-wave-2 span:nth-child(9)  i { animation-delay: 230ms !important; }
+.confetti-wave-2 span:nth-child(10) i { animation-delay: 270ms !important; }
+.confetti-wave-2 span:nth-child(11) i { animation-delay: 290ms !important; }
+.confetti-wave-2 span:nth-child(12) i { animation-delay: 310ms !important; }
+
+/* === TEXT REVEALS === */
+
+/* "Je réponds déjà à la première :" */
 .thanks-boom.fragment.visible .thanks-spoiler {
-  animation: fadeUp 500ms ease-out 250ms both;
+  animation: fadeUp 400ms ease-out 200ms both;
 }
 
-.slide-thanks.present .tag-row:first-of-type {
-  animation: fadeUp 400ms ease-out 500ms both;
+/* Massive "Oui" — the star of the show */
+.thanks-boom.fragment.visible .boom-oui {
+  animation: ouiExplode 1s cubic-bezier(0.16, 1, 0.3, 1) 350ms both, ouiGlow 2s ease-in-out 1.5s infinite;
 }
 
-.slide-thanks.present .tag-row:last-of-type {
-  animation: fadeIn 400ms ease-out 700ms both;
+/* "cette présentation..." */
+.thanks-boom.fragment.visible .thanks-spoiler-2 {
+  animation: fadeUp 500ms ease-out 600ms both;
+}
+
+/* QR code + footer */
+@keyframes qrGlowPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(34, 211, 238, 0.1), 0 0 60px rgba(167, 139, 250, 0.05); }
+  50%      { box-shadow: 0 0 40px rgba(34, 211, 238, 0.25), 0 0 80px rgba(167, 139, 250, 0.15), 0 0 120px rgba(34, 211, 238, 0.05); }
+}
+
+.slide-thanks.present .thanks-footer {
+  animation: swooshUp 600ms ease-out 500ms both;
+}
+
+.slide-thanks.present .qr-frame {
+  animation: qrGlowPulse 3s ease-in-out 1.5s infinite;
+}
+
+.slide-thanks.present .qr-glow {
+  animation: floatOrb 6s ease-in-out 1s infinite;
 }
